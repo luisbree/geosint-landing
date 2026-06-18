@@ -19,34 +19,17 @@ export default function SuccessStories() {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      projectTitle: "Monitoreo Hídrico en Gran Obra Metropolitana",
-      metric: "-20%",
-      metricLabel: "Tiempo de Análisis Piezométrico",
-      consultora: "AquaSistemas Consultores",
-      quote: "La integración de series temporales en el DIM Data Bus nos permitió cruzar registros de conductividad y niveles de napa en minutos en lugar de semanas. La simulación 3D facilitó la aprobación del estudio ante las autoridades competentes.",
-      logoText: "AS"
-    },
-    {
-      id: 2,
-      projectTitle: "Evaluación de Vulnerabilidad para Corredor Logístico",
-      metric: "-15%",
-      metricLabel: "Reducción de Pasivos Ambientales",
-      consultora: "GeoEstructuras & Asociados",
-      quote: "Utilizando el Módulo de Acuíferos logramos mapear la vulnerabilidad DRASTIC de forma autónoma. Obtuvimos el sustento técnico y legal requerido por la Ley N° 25.688 sin tener que tercerizar costosas modelaciones.",
-      logoText: "GE"
-    },
-    {
-      id: 3,
-      projectTitle: "Estudio Geomorfológico y Canal de Acceso Portuario",
-      metric: "-40%",
-      metricLabel: "Costos Operativos de Simulación",
-      consultora: "Paraná Ingeniería Fluvial",
-      quote: "Poder subir nuestras nubes de puntos batimétricos y procesar la granulometría de sedimentos directamente en la plataforma GeoSint aceleró el proyecto. La autonomía para correr modelos de erosión transformó nuestra consultoría.",
-      logoText: "PF"
+      projectTitle: "Remediación por Derrame de Hidrocarburos",
+      metric: "-90%",
+      metricLabel: "Tiempo en Cuantificación de Contaminantes",
+      consultora: "Consultora de Ingeniería Ambiental",
+      quote: "Cuantificamos con precisión el volumen de hidrocarburos DRO en 2650 m³ de suelo afectado por un derrame en solo 2 horas. Esto representa una reducción de más del 90% en comparación con métodos tradicionales, permitiendo 'decisiones fundamentadas' inmediatas y optimizando la gestión de la remediación y el cumplimiento normativo, como la Ley Nacional N° 24.051 de Residuos Peligrosos.",
+      logoText: "IA"
     }
   ];
 
   useEffect(() => {
+    if (testimonials.length <= 1) return;
     const timer = setInterval(() => {
       setActiveIdx((prev) => (prev + 1) % testimonials.length);
     }, 6000);
@@ -101,7 +84,7 @@ export default function SuccessStories() {
             {/* Testimonial Quote (8 cols) */}
             <div className="md:col-span-8 space-y-6">
               <p className="text-base sm:text-lg text-neutral-text/95 font-light italic leading-relaxed">
-                "{testimonials[activeIdx].quote}"
+                &ldquo;{testimonials[activeIdx].quote}&rdquo;
               </p>
 
               {/* Author Metadata */}
@@ -123,39 +106,41 @@ export default function SuccessStories() {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex justify-between items-center mt-8 pt-6 border-t border-neutral-border">
-            {/* Slide Dots Indicator */}
-            <div className="flex space-x-2">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveIdx(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    idx === activeIdx ? "bg-accent w-6" : "bg-neutral-border hover:bg-primary/30"
-                  }`}
-                  aria-label={`Ir al caso ${idx + 1}`}
-                />
-              ))}
-            </div>
+          {testimonials.length > 1 && (
+            <div className="flex justify-between items-center mt-8 pt-6 border-t border-neutral-border">
+              {/* Slide Dots Indicator */}
+              <div className="flex space-x-2">
+                {testimonials.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveIdx(idx)}
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      idx === activeIdx ? "bg-accent w-6" : "bg-neutral-border hover:bg-primary/30"
+                    }`}
+                    aria-label={`Ir al caso ${idx + 1}`}
+                  />
+                ))}
+              </div>
 
-            {/* Arrow Buttons */}
-            <div className="flex space-x-2">
-              <button
-                onClick={handlePrev}
-                className="p-2 border border-neutral-border hover:bg-neutral-bg rounded-lg text-primary hover:text-accent transition-colors focus:outline-none"
-                aria-label="Caso anterior"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="p-2 border border-neutral-border hover:bg-neutral-bg rounded-lg text-primary hover:text-accent transition-colors focus:outline-none"
-                aria-label="Siguiente caso"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
+              {/* Arrow Buttons */}
+              <div className="flex space-x-2">
+                <button
+                  onClick={handlePrev}
+                  className="p-2 border border-neutral-border hover:bg-neutral-bg rounded-lg text-primary hover:text-accent transition-colors focus:outline-none"
+                  aria-label="Caso anterior"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="p-2 border border-neutral-border hover:bg-neutral-bg rounded-lg text-primary hover:text-accent transition-colors focus:outline-none"
+                  aria-label="Siguiente caso"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Aggregated impact summary */}

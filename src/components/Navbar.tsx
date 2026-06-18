@@ -21,10 +21,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-neutral-border ${
         scrolled
-          ? "glass shadow-md py-3 border-b border-primary/10"
-          : "bg-transparent py-5"
+          ? "shadow-md py-3"
+          : "shadow-sm py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,12 +47,14 @@ export default function Navbar() {
             >
               Inicio
             </a>
+            {/* 
             <a
               href="#modules"
               className="text-neutral-text/900 hover:text-primary font-medium transition-colors"
             >
               Soluciones
             </a>
+            */}
             <a
               href="#how-it-works"
               className="text-neutral-text/900 hover:text-primary font-medium transition-colors"
@@ -89,7 +91,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden glass border-b border-primary/10 transition-all duration-200">
+        <div className="md:hidden bg-white border-b border-neutral-border transition-all duration-200">
           <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
             <a
               href="#home"
@@ -98,6 +100,7 @@ export default function Navbar() {
             >
               Inicio
             </a>
+            {/* 
             <a
               href="#modules"
               onClick={() => setIsOpen(false)}
@@ -105,6 +108,7 @@ export default function Navbar() {
             >
               Soluciones
             </a>
+            */}
             <a
               href="#how-it-works"
               onClick={() => setIsOpen(false)}

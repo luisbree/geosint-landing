@@ -52,9 +52,11 @@ export default function Footer() {
               <li>
                 <a href="#home" className="hover:text-accent transition-colors font-light">Inicio</a>
               </li>
+              {/* 
               <li>
                 <a href="#modules" className="hover:text-accent transition-colors font-light">Soluciones Autogestivas</a>
               </li>
+              */}
               <li>
                 <a href="#how-it-works" className="hover:text-accent transition-colors font-light">DIM Data Bus Core</a>
               </li>

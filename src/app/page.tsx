@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Modules from "@/components/Modules";
+// import Modules from "@/components/Modules";
 import HowItWorks from "@/components/HowItWorks";
 import SuccessStories from "@/components/SuccessStories";
 import ContactForm from "@/components/ContactForm";
@@ -19,7 +19,7 @@ export default function Home() {
         <Hero />
 
         {/* Section 2: Modules / Soluciones */}
-        <Modules />
+        {/* <Modules /> */}
 
         {/* Section 3: How It Works / DIM Data Bus */}
         <HowItWorks />
