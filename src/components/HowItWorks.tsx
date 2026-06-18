@@ -1,145 +1,108 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Database, Cpu, TrendingUp, ShieldCheck, Terminal, ArrowRight } from "lucide-react";
+import React from "react";
+import { ArrowRight } from "lucide-react";
 
-interface FlowStep {
+interface Pillar {
   id: number;
   title: string;
-  icon: React.ReactNode;
   subtitle: string;
-  desc: string;
-  logs: string[];
+  iconPath: string;
+  technicalDetails: React.ReactNode;
+  scientificValue: React.ReactNode;
+  marketingValue: React.ReactNode;
 }
 
 export default function HowItWorks() {
-  const [activeStep, setActiveStep] = useState<number>(0);
-  const [progress, setProgress] = useState(0);
-
-  const steps: FlowStep[] = [
+  const steps: Pillar[] = [
     {
       id: 0,
-      title: "Recopilación",
-      icon: <Database className="h-6 w-6" />,
-      subtitle: "Series Temporales e IoT",
-      desc: "Conectamos múltiples fuentes de datos ambientales en bruto, incluyendo sensores IoT en pozos de monitoreo, archivos de batimetría (.csv, .las), estaciones meteorológicas y datos de sensores remotos.",
-      logs: [
-        "Connecting to IoT node #A4-309...",
-        "Connection established. Protocols: MQTT / HTTPS",
-        "Stream: Water Level (Piezometry) -> 14.53 m",
-        "Reading raw bathymetry grid point (X:342.3, Y:984.1, Z:-12.4)",
-        "Buffering temporal telemetry series..."
-      ]
+      title: "Cadena de Custodia Digital",
+      subtitle: "Audit Trail Activo",
+      iconPath: "/sello_cadena_2.png",
+      technicalDetails: (
+        <>
+          Mapea un historial inmutable mediante{" "}
+          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
+            activity_logs
+          </code>{" "}
+          de cada acción (creación, edición o{" "}
+          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
+            soft delete
+          </code>
+          ), guardando un delta detallado (diff), marca temporal y los arrays{" "}
+          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
+            contributors
+          </code>{" "}
+          y{" "}
+          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
+            form_contributors
+          </code>{" "}
+          que registran la coautoría en campo.
+        </>
+      ),
+      scientificValue: (
+        <>
+          Garantiza reproducibilidad científica y linaje claro de muestras. Permite reconstruir campañas completas de monitoreo y cumplir con exigencias estrictas de Aseguramiento y Control de Calidad (QA/QC) ante agencias hídricas y ambientales (EPA).
+        </>
+      ),
+      marketingValue: (
+        <>
+          Vende "Transparencia sin Excepciones" ante inspecciones estatales y auditorías corporativas. Protege la responsabilidad civil de la consultora demostrando trazabilidad rigurosa desde el segundo cero del relevamiento.
+        </>
+      )
     },
     {
       id: 1,
-      title: "Integración (DIM Bus)",
-      icon: <Cpu className="h-6 w-6" />,
-      subtitle: "El Núcleo de Normalización",
-      desc: "Nuestra columna vertebral procesa, limpia y estructura datos heterogéneos en un repositorio unificado y geo-referenciado. Sincroniza variables de campo en tiempo real.",
-      logs: [
-        "DIM Data Bus core initializing pipeline...",
-        "Normalizing units: converting feet to meters...",
-        "Performing spatial interpolation (Kriging)...",
-        "Validating telemetry timestamps (offset fixed: +0.02s)",
-        "Data bus payload packaged. Size: 1.2MB"
-      ]
+      title: "Datos Inmutables",
+      subtitle: "Encriptación SHA-256",
+      iconPath: "/sello_inmutabilidad_2.png",
+      technicalDetails: (
+        <>
+          Genera un hash criptográfico SHA-256 (
+          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
+            firmaDigitalHash
+          </code>
+          ) en tiempo real al guardar cada analito en campo, vinculando valor, usuario, fecha y ubicación. Cualquier intento de alteración en el backend o base de datos externa rompe la firma de inmediato.
+        </>
+      ),
+      scientificValue: (
+        <>
+          Elimina por completo el sesgo de alteración manual de parámetros críticos (pH, metales pesados). Asegura la integridad del dataset para calibración precisa de modelos GIS, regresiones y predicciones hidrogeológicas de largo plazo.
+        </>
+      ),
+      marketingValue: (
+        <>
+          Criptografía avanzada aplicada al medio ambiente. Actúa como un notario digital ecológico: los reportes técnicos exportados cuentan con un sello de legitimidad matemática incuestionable ante litigios y tribunales.
+        </>
+      )
     },
     {
       id: 2,
-      title: "Análisis Predictivo",
-      icon: <TrendingUp className="h-6 w-6" />,
-      subtitle: "Simulaciones y Modelado 3D",
-      desc: "Los motores automatizados corren modelos numéricos directamente en la nube. Simulan dispersión de solutos, vulnerabilidad de acuíferos o cambios morfológicos costeros.",
-      logs: [
-        "Invoking 3D dispersion engine...",
-        "Running finite-difference groundwater model...",
-        "Iterative solver converged. Residual error < 0.001",
-        "Generating 3D plume isolines (Concentration threshold: 10mg/L)",
-        "Mapping DRASTIC aquifer susceptibility index: 138"
-      ]
-    },
-    {
-      id: 3,
-      title: "Decisiones Fundamentadas",
-      icon: <ShieldCheck className="h-6 w-6" />,
-      subtitle: "Acción y Cumplimiento de Leyes",
-      desc: "Transforma las simulaciones en informes técnicos listos para presentar ante auditores y autoridades públicas, garantizando el cumplimiento estricto de la legislación nacional.",
-      logs: [
-        "Formatting reports for regulatory compliance...",
-        "Generating document under Law N° 25.675 (EIA)",
-        "Applying environmental safety factor calculations...",
-        "Generating PDF Report: 'Impact_Report_Parana_Sint.pdf'",
-        "System State: READY. Secure data backup completed."
-      ]
+      title: "Georreferenciación GPS Rígida",
+      subtitle: "Validación Geográfica",
+      iconPath: "/sello_geolocalizacion_2.png",
+      technicalDetails: (
+        <>
+          Captura coordenadas espaciales nativas en tiempo real mediante un{" "}
+          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
+            GPS Heartbeat
+          </code>{" "}
+          de presencia activa cada 60s. Audita el retraso de sincronización e inyecta metadatos geográficos (EXIF) en fotos de evidencia vinculadas a la muestra.
+        </>
+      ),
+      scientificValue: (
+        <>
+          Asegura precisión topológica y de cuencas (evitando falsas subcuencas por desvíos del GPS). Correlaciona con exactitud los puntos de muestreo físico con imágenes satelitales históricas y modelos digitales de elevación (DEM).
+        </>
+      ),
+      marketingValue: (
+        <>
+          Erradica el fraude de la "carga de escritorio" certificando la presencia física del técnico en la cuenca o planta. Genera mapas interactivos de evidencias fotográficas vinculadas exactamente al punto de conflicto ambiental.
+        </>
+      )
     }
   ];
-
-  // Auto-advance progress effect
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setActiveStep((prevStep) => (prevStep + 1) % steps.length);
-          return 0;
-        }
-        return prev + 1.5;
-      });
-    }, 100);
-
-    return () => clearInterval(timer);
-  }, [steps.length]);
-
-  const handleStepClick = (idx: number) => {
-    setActiveStep(idx);
-    setProgress(0);
-  };
-
-  const renderStepCard = (idx: number) => {
-    const step = steps[idx];
-    const isActive = idx === activeStep;
-    return (
-      <div
-        key={step.id}
-        onClick={() => handleStepClick(idx)}
-        className={`flex items-start space-x-4.5 p-5 rounded-2xl cursor-pointer border transition-all duration-300 ${
-          isActive
-            ? "bg-accent-soft/20 border-accent text-neutral-text shadow-[0_4px_20px_rgba(76,175,80,0.08)]"
-            : "bg-white border-neutral-border hover:bg-neutral-bg hover:border-primary/20 shadow-sm"
-        }`}
-      >
-        {/* Circle Icon Indicator */}
-        <div
-          className={`relative flex items-center justify-center w-12 h-12 rounded-xl border transition-all duration-300 shrink-0 ${
-            isActive
-              ? "bg-accent text-white border-accent shadow-sm"
-              : "bg-neutral-bg text-neutral-text/70 border-neutral-border"
-          }`}
-        >
-          {step.icon}
-        </div>
-
-        {/* Step Content */}
-        <div className="space-y-1">
-          <div className="flex items-center space-x-2">
-            <span className="text-[10px] uppercase font-technical font-bold tracking-widest text-accent">
-              Paso 0{idx + 1}
-            </span>
-            <span className="text-[10px] text-neutral-text/30 font-technical">•</span>
-            <span className="text-[11px] font-technical font-semibold text-neutral-text/60 uppercase tracking-wider">
-              {step.subtitle}
-            </span>
-          </div>
-          <h3 className="text-lg font-bold text-primary">{step.title}</h3>
-          
-          {/* Step Description - Always visible */}
-          <p className="text-sm text-neutral-text/80 leading-relaxed font-light mt-1.5">
-            {step.desc}
-          </p>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <section id="how-it-works" className="py-24 bg-radial from-accent-soft/10 via-neutral-bg to-neutral-bg border-y border-primary/5 relative overflow-hidden text-neutral-text">
@@ -151,7 +114,7 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20 space-y-4 flex flex-col items-center">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 flex flex-col items-center">
           <div className="inline-flex items-center space-x-2 bg-primary-soft text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-primary/15 shadow-sm">
             <span>Nuestra Columna Vertebral</span>
           </div>
@@ -168,64 +131,61 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        {/* Layout Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          {/* Left Column: Interactive Steps List (6 cols) */}
-          <div className="lg:col-span-6 flex flex-col space-y-4">
-            {steps.map((_, idx) => renderStepCard(idx))}
-          </div>
-
-          {/* Right Column: Console Terminal (6 cols) */}
-          <div className="lg:col-span-6 flex flex-col h-full justify-center">
-            <div className="glass-dark rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col h-[400px]">
-              
-              {/* Terminal Title Bar */}
-              <div className="flex items-center justify-between px-5 py-3.5 bg-marine-dark/40 border-b border-white/5 relative z-30">
-                <div className="flex items-center space-x-2">
-                  <Terminal className="h-4.5 w-4.5 text-accent animate-pulse" />
-                  <span className="text-xs font-technical text-gray-300 tracking-wider">Console: {steps[activeStep].title}</span>
-                </div>
-                <div className="flex items-center space-x-1.5">
-                  <span className="w-2 h-2 rounded-full bg-white/10" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
-                </div>
-              </div>
-
-              {/* Console Logs Output */}
-              <div className="p-6 flex-1 font-technical text-[11px] space-y-3.5 overflow-y-auto leading-relaxed bg-transparent">
-                <div className="text-gray-500">{"// Simulación en tiempo real de operaciones del bus"}</div>
-                
-                {steps[activeStep].logs.map((log, idx) => (
-                  <div key={idx} className="flex items-start space-x-2">
-                    <span className="text-accent shrink-0 select-none">&gt;&gt;</span>
-                    <span className="text-gray-200">{log}</span>
+        {/* Layout Grid - 3 Columns on Desktop, 1 on Mobile */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {steps.map((step, idx) => (
+            <div
+              key={step.id}
+              className="group bg-white hover:bg-neutral-bg/30 border border-neutral-border/40 hover:border-accent/20 rounded-2xl p-6 md:p-8 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  {/* Icon Container with PNG image */}
+                  <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-primary p-3 border border-primary/20 shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0">
+                    <img src={step.iconPath} alt={step.title} className="w-full h-full object-contain" />
                   </div>
-                ))}
+                  {/* Step Badge */}
+                  <span className="text-[10px] uppercase font-technical font-bold tracking-widest text-accent bg-accent-soft/50 px-2.5 py-1 rounded-full border border-accent-soft/10">
+                    Pilar 0{idx + 1}
+                  </span>
+                </div>
 
-                {/* Progress bar placeholder inside console */}
-                <div className="pt-4 mt-4 border-t border-white/5 space-y-1.5">
-                  <div className="flex justify-between text-[10px] text-gray-400 font-technical">
-                    <span>Estado del Bus</span>
-                    <span>Procesando... {Math.round(progress)}%</span>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors duration-200">
+                    {step.title}
+                  </h3>
+                  <p className="text-[11px] uppercase font-technical font-bold text-accent tracking-wider">
+                    {step.subtitle}
+                  </p>
+                  <p className="text-sm text-neutral-text/85 leading-relaxed font-light pt-2">
+                    {step.technicalDetails}
+                  </p>
+                </div>
+
+                {/* Subsections: Rigor Científico & Garantía Comercial */}
+                <div className="mt-5 pt-5 border-t border-neutral-border/50 space-y-3">
+                  <div className="bg-primary-soft/30 p-3.5 rounded-xl border border-primary/10">
+                    <span className="font-bold text-primary block mb-1 font-technical uppercase tracking-wider text-[10px]">
+                      Rigor Científico
+                    </span>
+                    <p className="text-[11px] text-neutral-text/80 leading-relaxed font-light">
+                      {step.scientificValue}
+                    </p>
                   </div>
-                  <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden">
-                    <div
-                      className="bg-accent h-full transition-all duration-100"
-                      style={{ width: `${progress}%` }}
-                    />
+
+                  <div className="bg-accent-soft/30 p-3.5 rounded-xl border border-accent/10">
+                    <span className="font-bold text-accent block mb-1 font-technical uppercase tracking-wider text-[10px]">
+                      Garantía Comercial
+                    </span>
+                    <p className="text-[11px] text-neutral-text/80 leading-relaxed font-light">
+                      {step.marketingValue}
+                    </p>
                   </div>
                 </div>
-              </div>
 
-              {/* Console Footer */}
-              <div className="px-5 py-3.5 bg-marine-dark/40 border-t border-white/5 flex items-center justify-between text-[10px] font-technical text-gray-400">
-                <span>Buffer: Active</span>
-                <span>GeoSint Core Engine v2.0</span>
               </div>
             </div>
-          </div>
-
+          ))}
         </div>
 
         {/* Centered CTA Button at the bottom */}
