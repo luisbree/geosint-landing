@@ -126,7 +126,7 @@ export default function HowItWorks() {
             </span>
           </h2>
           
-          <p className="text-base sm:text-lg text-neutral-text/85 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base sm:text-lg text-black max-w-2xl mx-auto font-light leading-relaxed">
             Integramos series temporales y datos geoespaciales multi-paramétricos, transformando datos brutos en insights accionables para una gestión ambiental sin precedentes.
           </p>
         </div>
@@ -157,7 +157,7 @@ export default function HowItWorks() {
                   <p className="text-[11px] uppercase font-technical font-bold text-accent tracking-wider">
                     {step.subtitle}
                   </p>
-                  <p className="text-sm text-neutral-text/85 leading-relaxed font-light pt-2">
+                  <p className="text-sm text-black leading-relaxed font-light pt-2">
                     {step.technicalDetails}
                   </p>
                 </div>
@@ -168,7 +168,7 @@ export default function HowItWorks() {
                     <span className="font-bold text-primary block mb-1 font-technical uppercase tracking-wider text-[10px]">
                       Rigor Científico
                     </span>
-                    <p className="text-[11px] text-neutral-text/80 leading-relaxed font-light">
+                    <p className="text-[11px] text-black leading-relaxed font-light">
                       {step.scientificValue}
                     </p>
                   </div>
@@ -177,7 +177,7 @@ export default function HowItWorks() {
                     <span className="font-bold text-accent block mb-1 font-technical uppercase tracking-wider text-[10px]">
                       Garantía Comercial
                     </span>
-                    <p className="text-[11px] text-neutral-text/80 leading-relaxed font-light">
+                    <p className="text-[11px] text-black leading-relaxed font-light">
                       {step.marketingValue}
                     </p>
                   </div>

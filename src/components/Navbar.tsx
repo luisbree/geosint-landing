@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Menu, X, ArrowRight, Activity } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,10 +30,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center space-x-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <div className="bg-primary hover:bg-primary-hover p-2 rounded-lg transition-colors flex items-center justify-center">
-              <Activity className="h-6 w-6 text-accent" />
-            </div>
+          <div className="flex items-center space-x-2.5 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img src="/logo_geosint_2.svg" alt="GeoSint Logo" className="h-8 w-auto object-contain" />
             <span className="text-2xl font-heading font-extrabold tracking-tight text-primary flex items-center">
               Geo<span className="text-accent">Sint</span>
             </span>
@@ -71,7 +69,7 @@ export default function Navbar() {
               href="#contact"
               className="bg-primary text-white hover:bg-primary-hover px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow flex items-center space-x-1.5"
             >
-              <span>Solicitar Demo</span>
+              <span>Solicite TRIAL de 7 días</span>
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -128,7 +126,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="mt-2 w-full bg-primary text-white hover:bg-primary-hover px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200 flex items-center justify-center space-x-2"
             >
-              <span>Solicitar Demo</span>
+              <span>Solicite TRIAL de 7 días</span>
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>

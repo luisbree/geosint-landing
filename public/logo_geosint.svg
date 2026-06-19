@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="279.52136"
+   height="123.107"
+   viewBox="0 0 279.52136 123.107"
+   sodipodi:docname="WhatsApp Image 2026-05-19 at 13.33.40.jpeg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch3"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="0"
+         id="stop3" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#swatch3"
+       id="linearGradient3"
+       x1="140.30003"
+       y1="95.690147"
+       x2="401.24454"
+       y2="95.690147"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="279.52136"
+       height="123.107"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1"
+     transform="translate(-133.66106,-55.63815)">
+    <path
+       style="fill:#c65f2a;fill-opacity:1;stroke:url(#linearGradient3)"
+       d="M 140.55627,134.72186 272.09573,56.22251 400.98318,135.25226 351.65589,125.17464 271.03493,83.272962 190.94437,124.64424 Z"
+       id="path1" />
+    <path
+       style="fill:#d49538;fill-opacity:1"
+       d="M 160.71151,156.99871 271.03493,99.715395 378.70634,154.3467 271.03493,124.64424 Z"
+       id="path2" />
+    <path
+       style="fill:#59714f;fill-opacity:1"
+       d="m 133.66106,178.21475 138.43467,-37.12807 141.08668,37.65847 z"
+       id="path3" />
+  </g>
+</svg>

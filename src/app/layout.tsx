@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   description: "Análisis Ambiental Autogestivo para Consultoras. Transforma la información en acción con precisión, autonomía y visualización 3D mediante DIM Data Bus.",
   keywords: ["GeoSint", "DIM Data Bus", "análisis ambiental", "consultoría hídrica", "vulnerabilidad de acuíferos", "plumas de contaminantes", "geomorfología", "decisiones fundamentadas"],
   authors: [{ name: "GeoSint" }],
+  icons: {
+    icon: "/favicon.jpg",
+  },
 };
 
 export default function RootLayout({
