@@ -66,10 +66,10 @@ export default function Navbar() {
               Casos de Éxito
             </a>
             <a
-              href="#contact"
+              href="/ddb"
               className="bg-primary text-white hover:bg-primary-hover px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow flex items-center space-x-1.5"
             >
-              <span>Solicite TRIAL de 7 días</span>
+              <span>Ingresar</span>
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
@@ -122,11 +122,11 @@ export default function Navbar() {
               Casos de Éxito
             </a>
             <a
-              href="#contact"
+              href="/ddb"
               onClick={() => setIsOpen(false)}
               className="mt-2 w-full bg-primary text-white hover:bg-primary-hover px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200 flex items-center justify-center space-x-2"
             >
-              <span>Solicite TRIAL de 7 días</span>
+              <span>Ingresar</span>
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>

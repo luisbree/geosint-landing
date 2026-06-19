@@ -11,7 +11,7 @@ export default function Hero() {
     // Attempt play on mount
     if (videoRef.current) {
       videoRef.current.play()
-        .then(() => {})
+        .then(() => { })
         .catch(() => {
           // If unmuted autoplay is blocked by browser policies, mute and try again to guarantee it plays immediately
           if (videoRef.current) {
@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-28 pb-20 flex flex-col justify-center items-center bg-radial from-accent-soft/20 via-neutral-bg to-neutral-bg overflow-hidden text-center"
+      className="relative min-h-screen pt-28 pb-10 flex flex-col justify-center items-center bg-radial from-accent-soft/20 via-neutral-bg to-neutral-bg overflow-hidden text-center"
     >
       {/* Background grids and abstract decorations */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none" />
@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center">
 
         {/* Copywriting Section */}
-        <div className="max-w-4xl mx-auto space-y-6 mb-12 flex flex-col items-center">
+        <div className="max-w-5xl mx-auto space-y-6 mb-12 flex flex-col items-center">
           <div className="inline-flex items-center space-x-2 bg-primary-soft text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-primary/15 shadow-sm">
             <Sparkles className="h-3.5 w-3.5 text-accent animate-pulse" />
             <span>Tecnología y Medio Ambiente Integrados</span>
@@ -54,7 +54,7 @@ export default function Hero() {
           <p className="text-base sm:text-lg text-neutral-text/85 max-w-2xl mx-auto font-light leading-relaxed">
             Análisis Ambiental Autogestivo para Consultoras. Transforma la
             información geoespacial y series temporales en decisiones con precisión,
-            autonomía y cumplimiento normativo.
+            eficiencia y cumplimiento normativo.
           </p>
         </div>
 
@@ -79,15 +79,6 @@ export default function Hero() {
           </video>
         </div>
 
-        {/* Action Button below Video */}
-        <div className="mt-10 w-full flex justify-center">
-          <a
-            href="#contact"
-            className="flex items-center justify-center bg-white text-primary border border-primary/20 hover:bg-primary/5 px-8 py-4 rounded-xl font-bold transition-all duration-200 w-full sm:w-auto shadow-sm hover:shadow-md"
-          >
-            Solicite TRIAL de 7 días
-          </a>
-        </div>
       </div>
     </section>
   );

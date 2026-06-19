@@ -32,7 +32,7 @@ export default function ContactForm() {
   const validate = (): boolean => {
     const tempErrors: FormErrors = {};
     if (!form.name.trim()) tempErrors.name = "El nombre completo es requerido.";
-    
+
     if (!form.email.trim()) {
       tempErrors.email = "El correo electrónico es requerido.";
     } else if (!/\S+@\S+\.\S+/.test(form.email)) {
@@ -76,7 +76,7 @@ export default function ContactForm() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+
           {/* Information Column Left (5 cols) */}
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
@@ -84,7 +84,7 @@ export default function ContactForm() {
                 Póngase en Contacto
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight">
-                Transforme sus Datos en Decisiones Fundamentadas Hoy
+                Transforme sus Datos en Decisiones Fundamentadas
               </h2>
               <p className="text-base text-neutral-text/85 font-light leading-relaxed">
                 Acceda a la autonomía de análisis avanzados que su consultora necesita para optimizar proyectos y mitigar riesgos ambientales.
@@ -93,19 +93,23 @@ export default function ContactForm() {
 
             {/* What you get list */}
             <div className="space-y-4 bg-white p-6 rounded-2xl border border-neutral-border shadow-xs">
-              <h3 className="text-sm font-bold text-primary uppercase tracking-wide">¿Qué incluye la demo personalizada?</h3>
+              <h3 className="text-sm font-bold text-primary uppercase tracking-wide">¿Qué incluye el Free Trial?</h3>
               <ul className="space-y-3.5 text-xs text-neutral-text/80">
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-4.5 w-4.5 text-accent shrink-0 mt-0.5" />
-                  <span>Recorrido interactivo 1-a-1 por la plataforma DIM Data Bus.</span>
+                  <span>Licencia de siete días sin restricciones de funcionalidad.</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-4.5 w-4.5 text-accent shrink-0 mt-0.5" />
-                  <span>Acceso temporal a sandbox para cargar sus propias batimetrías.</span>
+                  <span>Cantidad ILIMITADA de usuarios por empresa.</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-4.5 w-4.5 text-accent shrink-0 mt-0.5" />
-                  <span>Asesoramiento sobre el encuadre bajo Leyes N° 25.675 y N° 25.688.</span>
+                  <span>Todas planillas de monitoreo estandarizadas: Agua superficial, Agua Subterránea, Calidad de Aire, Suelos.</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="h-4.5 w-4.5 text-accent shrink-0 mt-0.5" />
+                  <span>2 Campañas; 12 Estaciones de Monitoreo; 36 Reportes (3 por Estación); 144 Planillas; 512 Fotos</span>
                 </li>
               </ul>
             </div>
@@ -129,7 +133,7 @@ export default function ContactForm() {
 
           {/* Form Column Right (7 cols) */}
           <div className="lg:col-span-7 bg-white rounded-3xl p-8 md:p-10 border border-neutral-border shadow-xl">
-            
+
             {submitSuccess ? (
               // Success Screen
               <div className="text-center py-12 space-y-6">
@@ -166,11 +170,10 @@ export default function ContactForm() {
                         name="name"
                         value={form.name}
                         onChange={handleChange}
-                        className={`w-full bg-neutral-bg px-4 py-3 rounded-xl border text-sm transition-all focus:outline-hidden focus:ring-2 ${
-                          errors.name
-                            ? "border-red-500 focus:ring-red-200"
-                            : "border-neutral-border focus:border-primary focus:ring-primary-soft/50"
-                        }`}
+                        className={`w-full bg-neutral-bg px-4 py-3 rounded-xl border text-sm transition-all focus:outline-hidden focus:ring-2 ${errors.name
+                          ? "border-red-500 focus:ring-red-200"
+                          : "border-neutral-border focus:border-primary focus:ring-primary-soft/50"
+                          }`}
                         placeholder="Ej. Ing. Martín García"
                       />
                       {errors.name && (
@@ -195,11 +198,10 @@ export default function ContactForm() {
                         name="company"
                         value={form.company}
                         onChange={handleChange}
-                        className={`w-full bg-neutral-bg px-4 py-3 rounded-xl border text-sm transition-all focus:outline-hidden focus:ring-2 ${
-                          errors.company
-                            ? "border-red-500 focus:ring-red-200"
-                            : "border-neutral-border focus:border-primary focus:ring-primary-soft/50"
-                        }`}
+                        className={`w-full bg-neutral-bg px-4 py-3 rounded-xl border text-sm transition-all focus:outline-hidden focus:ring-2 ${errors.company
+                          ? "border-red-500 focus:ring-red-200"
+                          : "border-neutral-border focus:border-primary focus:ring-primary-soft/50"
+                          }`}
                         placeholder="Ej. AmbioTec S.A."
                       />
                       {errors.company && (
@@ -225,11 +227,10 @@ export default function ContactForm() {
                       name="email"
                       value={form.email}
                       onChange={handleChange}
-                      className={`w-full bg-neutral-bg px-4 py-3 rounded-xl border text-sm transition-all focus:outline-hidden focus:ring-2 ${
-                        errors.email
-                          ? "border-red-500 focus:ring-red-200"
-                          : "border-neutral-border focus:border-primary focus:ring-primary-soft/50"
-                      }`}
+                      className={`w-full bg-neutral-bg px-4 py-3 rounded-xl border text-sm transition-all focus:outline-hidden focus:ring-2 ${errors.email
+                        ? "border-red-500 focus:ring-red-200"
+                        : "border-neutral-border focus:border-primary focus:ring-primary-soft/50"
+                        }`}
                       placeholder="ejemplo@consultora.com"
                     />
                     {errors.email && (
@@ -254,11 +255,10 @@ export default function ContactForm() {
                       value={form.message}
                       onChange={handleChange}
                       rows={4}
-                      className={`w-full bg-neutral-bg px-4 py-3 rounded-xl border text-sm transition-all focus:outline-hidden focus:ring-2 resize-none ${
-                        errors.message
-                          ? "border-red-500 focus:ring-red-200"
-                          : "border-neutral-border focus:border-primary focus:ring-primary-soft/50"
-                      }`}
+                      className={`w-full bg-neutral-bg px-4 py-3 rounded-xl border text-sm transition-all focus:outline-hidden focus:ring-2 resize-none ${errors.message
+                        ? "border-red-500 focus:ring-red-200"
+                        : "border-neutral-border focus:border-primary focus:ring-primary-soft/50"
+                        }`}
                       placeholder="Describa brevemente el tipo de modelado o datos que desea integrar en la plataforma..."
                     />
                     {errors.message && (

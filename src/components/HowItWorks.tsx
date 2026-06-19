@@ -30,7 +30,7 @@ export default function HowItWorks() {
           <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
             soft delete
           </code>
-          ), guardando un delta detallado (diff), marca temporal y los arrays{" "}
+          ), guardando un delta de cambios (diff), marca temporal y las colecciones{" "}
           <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
             contributors
           </code>{" "}
@@ -43,12 +43,12 @@ export default function HowItWorks() {
       ),
       scientificValue: (
         <>
-          Garantiza reproducibilidad científica y linaje claro de muestras. Permite reconstruir campañas completas de monitoreo y cumplir con exigencias estrictas de Aseguramiento y Control de Calidad (QA/QC) ante agencias hídricas y ambientales (EPA).
+          Garantiza reproducibilidad científica y linaje claro de muestras. Permite reconstruir campañas completas de monitoreo y cumplir con exigencias estrictas de Aseguramiento y Control de Calidad (QA/QC) ante organismos ambientales (ADA, Ministerio de Ambiente).
         </>
       ),
       marketingValue: (
         <>
-          Vende "Transparencia sin Excepciones" ante inspecciones estatales y auditorías corporativas. Protege la responsabilidad civil de la consultora demostrando trazabilidad rigurosa desde el segundo cero del relevamiento.
+          Garantiza "Transparencia sin Excepciones" ante inspecciones estatales y auditorías corporativas. Protege la responsabilidad civil de la consultora demostrando trazabilidad rigurosa desde el inicio del relevamiento.
         </>
       )
     },
@@ -68,12 +68,12 @@ export default function HowItWorks() {
       ),
       scientificValue: (
         <>
-          Elimina por completo el sesgo de alteración manual de parámetros críticos (pH, metales pesados). Asegura la integridad del dataset para calibración precisa de modelos GIS, regresiones y predicciones hidrogeológicas de largo plazo.
+          Elimina por completo el sesgo de alteración manual de parámetros críticos (pH, metales pesados). Asegura la integridad del dataset para calibración precisa de modelos GIS, regresiones y predicciones de largo plazo.
         </>
       ),
       marketingValue: (
         <>
-          Criptografía avanzada aplicada al medio ambiente. Actúa como un notario digital ecológico: los reportes técnicos exportados cuentan con un sello de legitimidad matemática incuestionable ante litigios y tribunales.
+          Criptografía avanzada aplicada al medio ambiente. Actúa como un notario digital ecológico: los reportes técnicos exportados cuentan con un sello de legitimidad matemática incuestionable frente a auditorías ambientales y reclamos judiciales.
         </>
       )
     },
@@ -93,39 +93,39 @@ export default function HowItWorks() {
       ),
       scientificValue: (
         <>
-          Asegura precisión topológica y de cuencas (evitando falsas subcuencas por desvíos del GPS). Correlaciona con exactitud los puntos de muestreo físico con imágenes satelitales históricas y modelos digitales de elevación (DEM).
+          Asegura precisión planimétrica de cada parámetro individual cargado. Correlaciona con exactitud los puntos de muestreo físico con imágenes satelitales y modelos digitales de elevación (DEM).
         </>
       ),
       marketingValue: (
         <>
-          Erradica el fraude de la "carga de escritorio" certificando la presencia física del técnico en la cuenca o planta. Genera mapas interactivos de evidencias fotográficas vinculadas exactamente al punto de conflicto ambiental.
+          Erradica el fraude de la "carga de escritorio" certificando la presencia física del técnico en el campo. Vincula registros fotográficos con los puntos de interés ambiental.
         </>
       )
     }
   ];
 
   return (
-    <section id="how-it-works" className="py-24 bg-radial from-accent-soft/10 via-neutral-bg to-neutral-bg border-y border-primary/5 relative overflow-hidden text-neutral-text">
+    <section id="how-it-works" className="pt-12 pb-24 bg-radial from-accent-soft/10 via-neutral-bg to-neutral-bg border-y border-primary/5 relative overflow-hidden text-neutral-text">
       {/* Background grids and abstract decorations */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none" />
       <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/10 w-96 h-96 bg-accent/5 rounded-full filter blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 flex flex-col items-center">
           <div className="inline-flex items-center space-x-2 bg-primary-soft text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-primary/15 shadow-sm">
             <span>Nuestra Columna Vertebral</span>
           </div>
-          
+
           <h2 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight tracking-tight">
             DIM Data Bus:{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
               Inteligencia Ambiental Centralizada
             </span>
           </h2>
-          
+
           <p className="text-base sm:text-lg text-black max-w-2xl mx-auto font-light leading-relaxed">
             Integramos series temporales y datos geoespaciales multi-paramétricos, transformando datos brutos en insights accionables para una gestión ambiental sin precedentes.
           </p>
@@ -188,15 +188,21 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* Centered CTA Button at the bottom */}
-        <div className="mt-16 flex justify-center">
+        {/* Centered CTA Buttons at the bottom */}
+        <div className="mt-16 flex flex-col sm:flex-row justify-center items-center gap-4">
           <a
-            href="http://localhost:9003"
+            href="#contact"
+            className="flex items-center justify-center bg-white text-primary border border-primary/20 hover:bg-primary/5 px-8 py-4 rounded-xl font-bold transition-all duration-200 w-full sm:w-auto shadow-sm hover:shadow-md cursor-pointer"
+          >
+            Solicite TRIAL de 7 días
+          </a>
+          <a
+            href="http://localhost:9003/ddb"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold text-center transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center space-x-2 border border-accent/10 cursor-pointer"
+            className="group relative bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold text-center transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center space-x-2 border border-accent/10 cursor-pointer w-full sm:w-auto"
           >
-            <span>Ingresar a la Plataforma</span>
+            <span>Ingrese a la Plataforma</span>
             <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
         </div>
