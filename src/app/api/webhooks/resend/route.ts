@@ -91,28 +91,8 @@ export async function POST(req: NextRequest) {
     const formattedFrom = typeof originalFrom === "string" ? originalFrom : JSON.stringify(originalFrom);
     const formattedTo = Array.isArray(originalTo) ? originalTo.join(", ") : String(originalTo);
 
-    const forwardSubject = `[Reenviado] ${originalSubject}`;
-    const forwardHtml = `
-      <div style="background-color: #FAFAFA; padding: 25px 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-        <div style="max-width: 600px; margin: 0 auto; background-color: #FFFFFF; border-radius: 16px; overflow: hidden; border: 1px solid #EEEEEE; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);">
-          <!-- Forwarding Header Banner -->
-          <div style="background-color: #0A192F; padding: 18px 24px; color: #E0F2F1; font-size: 13px; line-height: 1.5; border-bottom: 3px solid #4CAF50;">
-            <div style="margin-bottom: 8px;">
-              <span style="color: #4CAF50; font-weight: 700; text-transform: uppercase; font-size: 9px; letter-spacing: 0.05em; background: rgba(76, 175, 80, 0.15); padding: 4px 8px; border-radius: 4px; display: inline-block;">
-                Reenvío Automático
-              </span>
-            </div>
-            <strong>Remitente:</strong> <span style="color: #FFFFFF;">${formattedFrom}</span><br />
-            <strong>Destinatario:</strong> <span style="color: #FFFFFF;">${formattedTo}</span>
-          </div>
-          
-          <!-- Forwarded Content -->
-          <div style="padding: 24px; background-color: #FFFFFF;">
-            ${originalHtml || `<pre style="white-space: pre-wrap; font-family: inherit; font-size: 14px; line-height: 1.6; color: #424242; margin: 0;">${originalText}</pre>`}
-          </div>
-        </div>
-      </div>
-    `;
+    const forwardSubject = originalSubject;
+    const forwardHtml = originalHtml || `<pre style="white-space: pre-wrap; font-family: sans-serif; font-size: 14px; line-height: 1.6; color: #424242; margin: 0;">${originalText}</pre>`;
 
     // Forwarding to target email
     const senderEmail = "contacto@geosint.com.ar";

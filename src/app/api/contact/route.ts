@@ -61,6 +61,11 @@ export async function POST(req: NextRequest) {
                   </td>
                 </tr>
               </table>
+              <div style="margin-top: 20px; border-top: 1px solid #EEEEEE; padding-top: 15px; text-align: center;">
+                <a href="https://geosint.com.ar/alta-empresa" target="_blank" style="background-color: #004D40; color: #FFFFFF; font-size: 13px; font-weight: 700; text-decoration: none; padding: 10px 20px; border-radius: 8px; display: inline-block;">
+                  Dar de Alta Empresa
+                </a>
+              </div>
             </div>
 
             <!-- Message block -->
