@@ -50,7 +50,7 @@ export default function SuccessStories() {
       <div className="absolute -top-1/4 -right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full filter blur-3xl pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-primary">
@@ -64,7 +64,7 @@ export default function SuccessStories() {
 
         {/* Carousel Container */}
         <div className="relative bg-white rounded-3xl shadow-xl border border-neutral-border p-8 md:p-12 transition-all duration-300 hover:shadow-2xl">
-          
+
           {/* Quote Icon */}
           <div className="absolute top-6 left-6 text-primary-soft">
             <Quote className="h-16 w-16 fill-current opacity-60" />
@@ -114,9 +114,8 @@ export default function SuccessStories() {
                   <button
                     key={idx}
                     onClick={() => setActiveIdx(idx)}
-                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                      idx === activeIdx ? "bg-accent w-6" : "bg-neutral-border hover:bg-primary/30"
-                    }`}
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === activeIdx ? "bg-accent w-6" : "bg-neutral-border hover:bg-primary/30"
+                      }`}
                     aria-label={`Ir al caso ${idx + 1}`}
                   />
                 ))}
@@ -157,7 +156,7 @@ export default function SuccessStories() {
           <div className="space-y-1">
             <div className="flex items-center justify-center space-x-2 text-primary">
               <BarChart className="h-5 w-5 text-accent" />
-              <span className="text-2xl font-technical font-extrabold">3D Interactivo</span>
+              <span className="text-2xl font-technical font-extrabold">Módulo de Análisis</span>
             </div>
             <p className="text-xs text-neutral-text/60 font-technical font-semibold uppercase tracking-wider">
               Visualización Autogestiva
@@ -166,7 +165,7 @@ export default function SuccessStories() {
           <div className="space-y-1">
             <div className="flex items-center justify-center space-x-2 text-primary">
               <ShieldCheck className="h-5 w-5 text-accent" />
-              <span className="text-2xl font-technical font-extrabold">100% Legal</span>
+              <span className="text-2xl font-technical font-extrabold">Cumplimiento B2B</span>
             </div>
             <p className="text-xs text-neutral-text/60 font-technical font-semibold uppercase tracking-wider">
               Sustento bajo Leyes Ambientales

@@ -122,11 +122,11 @@ export default function ContactForm() {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4.5 w-4.5 text-primary" />
-                <span>+54 11 5234-9876</span>
+                <span>+54 221 3183040</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4.5 w-4.5 text-primary" />
-                <span>Buenos Aires, Argentina (Servicios Regionales)</span>
+                <span>La Plata, Argentina</span>
               </div>
             </div>
           </div>
@@ -284,7 +284,7 @@ export default function ContactForm() {
                   ) : (
                     <>
                       <Send className="h-4.5 w-4.5" />
-                      <span>Solicitar Demo Personalizada</span>
+                      <span>Solicitar Trial de 7 días</span>
                     </>
                   )}
                 </button>
