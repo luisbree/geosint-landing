@@ -143,7 +143,7 @@ export default function ContactForm() {
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-primary">¡Solicitud Enviada con Éxito!</h3>
                   <p className="text-sm text-neutral-text/75 max-w-md mx-auto">
-                    Gracias por ponerse en contacto con GeoSint. Uno de nuestros ingenieros ambientales se comunicará con usted en menos de 24 horas hábiles para coordinar la demo personalizada.
+                    Gracias por interesarse en GeoSint. En breve nos pondremos en contacto con Ud.
                   </p>
                 </div>
                 <button
