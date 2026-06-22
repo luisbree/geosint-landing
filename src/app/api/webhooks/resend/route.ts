@@ -62,11 +62,31 @@ export async function POST(req: NextRequest) {
     }
 
     const emailData = body.data || {};
-    const originalFrom = emailData.from; // "Sender Name <sender@example.com>"
-    const originalTo = emailData.to || [];
-    const originalSubject = emailData.subject || "(No Subject)";
-    const originalText = emailData.text || "";
-    const originalHtml = emailData.html || "";
+    const emailId = emailData.email_id;
+
+    if (!emailId) {
+      return NextResponse.json(
+        { error: "Missing email_id in webhook data" },
+        { status: 400 }
+      );
+    }
+
+    // Since the webhook payload only contains metadata (no HTML/Text body), we must retrieve the full email details using the email_id
+    const { data: fullEmail, error: fetchError } = await resend.emails.receiving.get(emailId);
+
+    if (fetchError || !fullEmail) {
+      console.error("Error fetching received email from Resend API:", fetchError);
+      return NextResponse.json(
+        { error: "Failed to fetch received email details", details: fetchError },
+        { status: 500 }
+      );
+    }
+
+    const originalFrom = fullEmail.from; // "Sender Name <sender@example.com>"
+    const originalTo = fullEmail.to || [];
+    const originalSubject = fullEmail.subject || "(No Subject)";
+    const originalText = fullEmail.text || "";
+    const originalHtml = fullEmail.html || "";
 
     const formattedFrom = typeof originalFrom === "string" ? originalFrom : JSON.stringify(originalFrom);
     const formattedTo = Array.isArray(originalTo) ? originalTo.join(", ") : String(originalTo);
@@ -89,9 +109,23 @@ export async function POST(req: NextRequest) {
     // Forwarding to target email
     const senderEmail = "contacto@geosint.com.ar";
     
-    // Attempt to extract raw email address for Reply-To so that replies go to the original sender
-    let replyToEmail = senderEmail;
+    // Construct From header using original sender's display name if available to keep it recognizable
+    let forwardFrom = senderEmail;
     if (typeof originalFrom === "string") {
+      const nameMatch = originalFrom.match(/^([^<]+)/);
+      if (nameMatch && nameMatch[1]) {
+        const namePart = nameMatch[1].trim().replace(/^["']|["']$/g, '');
+        if (namePart && namePart.toLowerCase() !== senderEmail.toLowerCase()) {
+          forwardFrom = `${namePart} <${senderEmail}>`;
+        }
+      }
+    }
+
+    // Extract Reply-To email so that when replying to the forward, it goes directly to the original client
+    let replyToEmail = senderEmail;
+    if (Array.isArray(fullEmail.reply_to) && fullEmail.reply_to.length > 0) {
+      replyToEmail = fullEmail.reply_to[0];
+    } else if (typeof originalFrom === "string") {
       const match = originalFrom.match(/<([^>]+)>/);
       if (match && match[1]) {
         replyToEmail = match[1];
@@ -101,7 +135,7 @@ export async function POST(req: NextRequest) {
     }
 
     const { error: sendError } = await resend.emails.send({
-      from: senderEmail,
+      from: forwardFrom,
       to: ["luisbree@gmail.com"],
       replyTo: replyToEmail,
       subject: forwardSubject,

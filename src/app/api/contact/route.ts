@@ -54,9 +54,11 @@ export async function POST(req: NextRequest) {
     `;
 
     // Send email using Resend
+    // We display the client's name in 'from' but use the verified domain email to comply with SPF/DMARC.
+    // We send it to both luisbree@gmail.com and contacto@geosint.com.ar so they receive it immediately.
     const { error } = await resend.emails.send({
-      from: "contacto@geosint.com.ar",
-      to: ["contacto@geosint.com.ar"],
+      from: `${name} <contacto@geosint.com.ar>`,
+      to: ["luisbree@gmail.com", "contacto@geosint.com.ar"],
       replyTo: email,
       subject: `[Solicitud de Trial] ${name} (${company})`,
       html: htmlContent,
