@@ -28,6 +28,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validate = (): boolean => {
     const tempErrors: FormErrors = {};
@@ -55,18 +56,36 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    // Simulate API request delay
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Ocurrió un error al procesar tu solicitud.");
+      }
+
       setSubmitSuccess(true);
       setForm({ name: "", email: "", company: "", message: "" });
-    }, 1500);
+    } catch (err: any) {
+      console.error("Error submitting contact form:", err);
+      setSubmitError(err.message || "Error al enviar la solicitud. Intenta de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -269,6 +288,14 @@ export default function ContactForm() {
                   </div>
                   {errors.message && <p className="text-[11px] text-red-500 font-semibold">{errors.message}</p>}
                 </div>
+
+                {/* Submit error display */}
+                {submitError && (
+                  <div className="p-4 rounded-xl bg-red-50 text-red-700 text-xs font-semibold flex items-center space-x-2 border border-red-200">
+                    <AlertCircle className="h-4 w-4 shrink-0" />
+                    <span>{submitError}</span>
+                  </div>
+                )}
 
                 {/* Submit button */}
                 <button
