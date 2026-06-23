@@ -128,7 +128,7 @@ export default function ContactForm() {
                 </li>
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-4.5 w-4.5 text-accent shrink-0 mt-0.5" />
-                  <span>2 Campañas; 12 Estaciones de Monitoreo; 36 Reportes (3 por Estación); 144 Planillas; 512 Fotos</span>
+                  <span>2 Campañas; 3 Estaciones de Monitoreo; 6 Reportes (2 por Estación); 24 Planillas; 60 Fotos</span>
                 </li>
               </ul>
             </div>
