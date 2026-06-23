@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Encode_Sans, Encode_Sans_Condensed, Encode_Sans_Expanded } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const encodeSans = Encode_Sans({
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-body bg-neutral-bg text-neutral-text">
         {children}
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
     </html>
   );
 }

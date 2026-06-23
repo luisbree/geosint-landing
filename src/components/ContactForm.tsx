@@ -137,7 +137,7 @@ export default function ContactForm() {
             <div className="space-y-4 text-xs text-neutral-text/70 font-technical">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4.5 w-4.5 text-primary" />
-                <a href="mailto:soporte@geosint.com" className="hover:text-primary transition-colors">soporte@geosint.com</a>
+                <a href="mailto:contacto@geosint.com.ar" className="hover:text-primary transition-colors">contacto@geosint.com.ar</a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-4.5 w-4.5 text-primary" />
