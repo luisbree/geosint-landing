@@ -47,7 +47,7 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl text-primary leading-tight tracking-tight">
             <span className="font-extrabold">GeoSint: Soluciones de Inteligencia Territorial</span>{" "}
             <span className="font-light block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              Plataforma de Gestión y Análisis de Datos con Cumplimiento B2B.
+              Plataforma de Gestión y Análisis de Datos Geoespaciales y Normativas Ambientales.
             </span>
           </h1>
 

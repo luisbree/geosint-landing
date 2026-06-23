@@ -14,6 +14,7 @@ interface Pillar {
 }
 
 export default function HowItWorks() {
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:9003";
   const steps: Pillar[] = [
     {
       id: 0,
@@ -197,7 +198,7 @@ export default function HowItWorks() {
             Solicite TRIAL de 7 días
           </a>
           <a
-            href="http://localhost:9003/ddb"
+            href={`${appUrl}/ddb`}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold text-center transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center space-x-2 border border-accent/10 cursor-pointer w-full sm:w-auto"

@@ -6,6 +6,8 @@ import { Menu, X, ArrowRight } from "lucide-react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://ddb.geosint.com.ar";
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +57,7 @@ export default function Navbar() {
             */}
             <a
               href="#how-it-works"
-              className="text-neutral-text/900 hover:text-primary font-medium transition-colors"
+              className="px-3.5 py-1.5 rounded-full text-accent font-semibold bg-accent-soft hover:bg-accent hover:text-white transition-all duration-200 border border-accent/15"
             >
               DIM Data Bus
             </a>
@@ -66,7 +68,7 @@ export default function Navbar() {
               Casos de Éxito
             </a>
             <a
-              href="/ddb"
+              href={`${appUrl}/ddb`}
               className="bg-primary text-white hover:bg-primary-hover px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow flex items-center space-x-1.5"
             >
               <span>Ingresar</span>
@@ -110,7 +112,7 @@ export default function Navbar() {
             <a
               href="#how-it-works"
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2.5 rounded-md text-base font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
+              className="block px-3 py-2.5 rounded-md text-base font-semibold text-accent bg-accent-soft hover:bg-accent hover:text-white transition-all duration-200"
             >
               DIM Data Bus
             </a>
@@ -122,7 +124,7 @@ export default function Navbar() {
               Casos de Éxito
             </a>
             <a
-              href="/ddb"
+              href={`${appUrl}/ddb`}
               onClick={() => setIsOpen(false)}
               className="mt-2 w-full bg-primary text-white hover:bg-primary-hover px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200 flex items-center justify-center space-x-2"
             >
