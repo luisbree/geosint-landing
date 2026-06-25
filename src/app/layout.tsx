@@ -31,6 +31,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,7 +44,9 @@ export default function RootLayout({
       className={`${encodeSans.variable} ${encodeSansCondensed.variable} ${encodeSansExpanded.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col font-body bg-neutral-bg text-neutral-text">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
       {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
     </html>

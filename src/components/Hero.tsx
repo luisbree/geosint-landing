@@ -2,10 +2,12 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { Sparkles } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(false);    // Attempt unmuted autoplay
+  const { t } = useLanguage();
 
   useEffect(() => {
     // Attempt play on mount
@@ -41,20 +43,18 @@ export default function Hero() {
         <div className="max-w-5xl mx-auto space-y-6 mb-12 flex flex-col items-center">
           <div className="inline-flex items-center space-x-2 bg-primary-soft text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-primary/15 shadow-sm">
             <Sparkles className="h-3.5 w-3.5 text-accent animate-pulse" />
-            <span>Tecnología y Medio Ambiente Integrados</span>
+            <span>{t("hero.tag")}</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl text-primary leading-tight tracking-tight">
-            <span className="font-extrabold">GeoSint: Soluciones de Inteligencia Territorial</span>{" "}
+            <span className="font-extrabold">{t("hero.title")}</span>{" "}
             <span className="font-light block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              Plataforma de Gestión y Análisis de Datos Geoespaciales y Normativas Ambientales.
+              {t("hero.subtitle")}
             </span>
           </h1>
 
           <p className="text-base sm:text-lg text-neutral-text/85 max-w-2xl mx-auto font-light leading-relaxed">
-            Análisis Ambiental Autogestivo para Consultoras. Transforma la
-            información geoespacial y series temporales en decisiones con precisión,
-            eficiencia y cumplimiento normativo.
+            {t("hero.desc")}
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function Hero() {
               src="/video_01.mp4"
               type="video/mp4"
             />
-            Su navegador no soporta reproducción de videos HTML5.
+            {t("hero.videoFallback")}
           </video>
         </div>
 
