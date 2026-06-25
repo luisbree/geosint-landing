@@ -14,7 +14,7 @@ interface Pillar {
 }
 
 export default function HowItWorks() {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:9003";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://ddb.geosint.com.ar";
   const steps: Pillar[] = [
     {
       id: 0,
