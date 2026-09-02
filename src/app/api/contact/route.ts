@@ -25,6 +25,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const sysAdminUrl = `https://ddb.geosint.com.ar/sys-admin?empresa=${encodeURIComponent(company)}&email=${encodeURIComponent(email)}&plan=${encodeURIComponent('TRIAL 7 DÍAS')}`;
+
     const htmlContent = `
       <div style="background-color: #FAFAFA; padding: 30px 15px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #424242; line-height: 1.5;">
         <div style="max-width: 580px; margin: 0 auto; background-color: #FFFFFF; border-radius: 16px; overflow: hidden; border: 1px solid #EEEEEE; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);">
@@ -62,7 +64,7 @@ export async function POST(req: NextRequest) {
                 </tr>
               </table>
               <div style="margin-top: 20px; border-top: 1px solid #EEEEEE; padding-top: 15px; text-align: center;">
-                <a href="https://geosint.com.ar/alta-empresa" target="_blank" style="background-color: #004D40; color: #FFFFFF; font-size: 13px; font-weight: 700; text-decoration: none; padding: 10px 20px; border-radius: 8px; display: inline-block;">
+                <a href="${sysAdminUrl}" target="_blank" style="background-color: #004D40; color: #FFFFFF; font-size: 13px; font-weight: 700; text-decoration: none; padding: 10px 20px; border-radius: 8px; display: inline-block;">
                   Dar de Alta Empresa
                 </a>
               </div>
