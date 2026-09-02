@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface Pillar {
   id: number;
@@ -15,93 +16,52 @@ interface Pillar {
 
 export default function HowItWorks() {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://ddb.geosint.com.ar";
+  const { t } = useLanguage();
+
+  // Helper to parse formatting placeholder e.g. {activity_logs} into styled HTML code tag
+  const parseCodes = (text: string) => {
+    if (!text) return "";
+    const parts = text.split(/(\{.*?\})/g);
+    return parts.map((part, index) => {
+      if (part.startsWith("{") && part.endsWith("}")) {
+        const codeText = part.slice(1, -1);
+        return (
+          <code key={index} className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
+            {codeText}
+          </code>
+        );
+      }
+      return part;
+    });
+  };
+
   const steps: Pillar[] = [
     {
       id: 0,
-      title: "Cadena de Custodia Digital",
-      subtitle: "Audit Trail Activo",
+      title: t("howItWorks.pillars.0.title"),
+      subtitle: t("howItWorks.pillars.0.subtitle"),
       iconPath: "/sello_cadena_2.png",
-      technicalDetails: (
-        <>
-          Mapea un historial inmutable mediante{" "}
-          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
-            activity_logs
-          </code>{" "}
-          de cada acción (creación, edición o{" "}
-          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
-            soft delete
-          </code>
-          ), guardando un delta de cambios (diff), marca temporal y las colecciones{" "}
-          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
-            contributors
-          </code>{" "}
-          y{" "}
-          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
-            form_contributors
-          </code>{" "}
-          que registran la coautoría en campo.
-        </>
-      ),
-      scientificValue: (
-        <>
-          Garantiza reproducibilidad científica y linaje claro de muestras. Permite reconstruir campañas completas de monitoreo y cumplir con exigencias estrictas de Aseguramiento y Control de Calidad (QA/QC) ante organismos ambientales (ADA, Ministerio de Ambiente).
-        </>
-      ),
-      marketingValue: (
-        <>
-          Garantiza "Transparencia sin Excepciones" ante inspecciones estatales y auditorías corporativas. Protege la responsabilidad civil de la consultora demostrando trazabilidad rigurosa desde el inicio del relevamiento.
-        </>
-      )
+      technicalDetails: parseCodes(t("howItWorks.pillars.0.technicalDetails")),
+      scientificValue: t("howItWorks.pillars.0.scientificValue"),
+      marketingValue: t("howItWorks.pillars.0.marketingValue")
     },
     {
       id: 1,
-      title: "Datos Inmutables",
-      subtitle: "Encriptación SHA-256",
+      title: t("howItWorks.pillars.1.title"),
+      subtitle: t("howItWorks.pillars.1.subtitle"),
       iconPath: "/sello_inmutabilidad_2.png",
-      technicalDetails: (
-        <>
-          Genera un hash criptográfico SHA-256 (
-          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
-            firmaDigitalHash
-          </code>
-          ) en tiempo real al guardar cada analito en campo, vinculando valor, usuario, fecha y ubicación. Cualquier intento de alteración en el backend o base de datos externa rompe la firma de inmediato.
-        </>
-      ),
-      scientificValue: (
-        <>
-          Elimina por completo el sesgo de alteración manual de parámetros críticos (pH, metales pesados). Asegura la integridad del dataset para calibración precisa de modelos GIS, regresiones y predicciones de largo plazo.
-        </>
-      ),
-      marketingValue: (
-        <>
-          Criptografía avanzada aplicada al medio ambiente. Actúa como un notario digital ecológico: los reportes técnicos exportados cuentan con un sello de legitimidad matemática incuestionable frente a auditorías ambientales y reclamos judiciales.
-        </>
-      )
+      technicalDetails: parseCodes(t("howItWorks.pillars.1.technicalDetails")),
+      scientificValue: t("howItWorks.pillars.1.scientificValue"),
+      marketingValue: t("howItWorks.pillars.1.marketingValue")
     },
     {
       id: 2,
-      title: "Georreferenciación GPS Rígida",
-      subtitle: "Validación Geográfica",
+      title: t("howItWorks.pillars.2.title"),
+      subtitle: t("howItWorks.pillars.2.subtitle"),
       iconPath: "/sello_geolocalizacion_2.png",
-      technicalDetails: (
-        <>
-          Captura coordenadas espaciales nativas en tiempo real mediante un{" "}
-          <code className="font-mono text-[11px] font-semibold px-1 py-0.5 bg-primary-soft text-primary rounded border border-primary/10">
-            GPS Heartbeat
-          </code>{" "}
-          de presencia activa cada 60s. Audita el retraso de sincronización e inyecta metadatos geográficos (EXIF) en fotos de evidencia vinculadas a la muestra.
-        </>
-      ),
-      scientificValue: (
-        <>
-          Asegura precisión planimétrica de cada parámetro individual cargado. Correlaciona con exactitud los puntos de muestreo físico con imágenes satelitales y modelos digitales de elevación (DEM).
-        </>
-      ),
-      marketingValue: (
-        <>
-          Erradica el fraude de la "carga de escritorio" certificando la presencia física del técnico en el campo. Vincula registros fotográficos con los puntos de interés ambiental.
-        </>
-      )
+      technicalDetails: parseCodes(t("howItWorks.pillars.2.technicalDetails")),
+      scientificValue: t("howItWorks.pillars.2.scientificValue"),
+      marketingValue: t("howItWorks.pillars.2.marketingValue")
     }
   ];
 
@@ -117,18 +77,18 @@ export default function HowItWorks() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4 flex flex-col items-center">
           <div className="inline-flex items-center space-x-2 bg-primary-soft text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-primary/15 shadow-sm">
-            <span>Nuestra Columna Vertebral</span>
+            <span>{t("howItWorks.tag")}</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-primary leading-tight tracking-tight">
-            DIM Data Bus:{" "}
+            {t("howItWorks.title")}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              Inteligencia Ambiental Centralizada
+              {t("howItWorks.titleGradient")}
             </span>
           </h2>
 
           <p className="text-base sm:text-lg text-black max-w-2xl mx-auto font-light leading-relaxed">
-            Integramos series temporales y datos geoespaciales multi-paramétricos, transformando datos brutos en insights accionables para una gestión ambiental sin precedentes.
+            {t("howItWorks.desc")}
           </p>
         </div>
 
@@ -147,7 +107,7 @@ export default function HowItWorks() {
                   </div>
                   {/* Step Badge */}
                   <span className="text-[10px] uppercase font-technical font-bold tracking-widest text-accent bg-accent-soft/50 px-2.5 py-1 rounded-full border border-accent-soft/10">
-                    Pilar 0{idx + 1}
+                    {t("howItWorks.pilarBadge")} 0{idx + 1}
                   </span>
                 </div>
 
@@ -158,16 +118,16 @@ export default function HowItWorks() {
                   <p className="text-[11px] uppercase font-technical font-bold text-accent tracking-wider">
                     {step.subtitle}
                   </p>
-                  <p className="text-sm text-black leading-relaxed font-light pt-2">
+                  <div className="text-sm text-black leading-relaxed font-light pt-2">
                     {step.technicalDetails}
-                  </p>
+                  </div>
                 </div>
 
                 {/* Subsections: Rigor Científico & Garantía Comercial */}
                 <div className="mt-5 pt-5 border-t border-neutral-border/50 space-y-3">
                   <div className="bg-primary-soft/30 p-3.5 rounded-xl border border-primary/10">
                     <span className="font-bold text-primary block mb-1 font-technical uppercase tracking-wider text-[10px]">
-                      Rigor Científico
+                      {t("howItWorks.rigorCientifico")}
                     </span>
                     <p className="text-[11px] text-black leading-relaxed font-light">
                       {step.scientificValue}
@@ -176,7 +136,7 @@ export default function HowItWorks() {
 
                   <div className="bg-accent-soft/30 p-3.5 rounded-xl border border-accent/10">
                     <span className="font-bold text-accent block mb-1 font-technical uppercase tracking-wider text-[10px]">
-                      Garantía Comercial
+                      {t("howItWorks.garantiaComercial")}
                     </span>
                     <p className="text-[11px] text-black leading-relaxed font-light">
                       {step.marketingValue}
@@ -195,7 +155,7 @@ export default function HowItWorks() {
             href="#contact"
             className="flex items-center justify-center bg-white text-primary border border-primary/20 hover:bg-primary/5 px-8 py-4 rounded-xl font-bold transition-all duration-200 w-full sm:w-auto shadow-sm hover:shadow-md cursor-pointer"
           >
-            Solicite TRIAL de 7 días
+            {t("howItWorks.ctaTrial")}
           </a>
           <a
             href={`${appUrl}/ddb`}
@@ -203,7 +163,7 @@ export default function HowItWorks() {
             rel="noopener noreferrer"
             className="group relative bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl font-bold text-center transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center space-x-2 border border-accent/10 cursor-pointer w-full sm:w-auto"
           >
-            <span>Ingrese a la Plataforma</span>
+            <span>{t("howItWorks.ctaEnter")}</span>
             <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
         </div>

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Quote, ShieldCheck, Timer, BarChart } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface Testimonial {
   id: number;
@@ -15,16 +16,17 @@ interface Testimonial {
 
 export default function SuccessStories() {
   const [activeIdx, setActiveIdx] = useState(0);
+  const { t, language } = useLanguage();
 
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      projectTitle: "Remediación por Derrame de Hidrocarburos",
-      metric: "-90%",
-      metricLabel: "Tiempo en Cuantificación de Contaminantes",
-      consultora: "Consultora de Ingeniería Ambiental",
-      quote: "Cuantificamos con precisión el volumen de hidrocarburos DRO en 2650 m³ de suelo afectado por un derrame en solo 2 horas. Esto representa una reducción de más del 90% en comparación con métodos tradicionales, permitiendo 'decisiones fundamentadas' inmediatas y optimizando la gestión de la remediación y el cumplimiento normativo, como la Ley Nacional N° 24.051 de Residuos Peligrosos.",
-      logoText: "IA"
+      projectTitle: t("successStories.testimonials.0.projectTitle"),
+      metric: t("successStories.testimonials.0.metric"),
+      metricLabel: t("successStories.testimonials.0.metricLabel"),
+      consultora: t("successStories.testimonials.0.consultora"),
+      quote: t("successStories.testimonials.0.quote"),
+      logoText: t("successStories.testimonials.0.logoText")
     }
   ];
 
@@ -54,11 +56,11 @@ export default function SuccessStories() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-primary">
-            GeoSint en Acción: Historias de Impacto
+            {t("successStories.title")}
           </h2>
           <div className="w-16 h-1 bg-accent mx-auto rounded-full" />
           <p className="text-base text-neutral-text/80 font-light">
-            Conozca cómo consultoras líderes obtienen autonomía analítica y garantizan el cumplimiento normativo en proyectos reales.
+            {t("successStories.desc")}
           </p>
         </div>
 
@@ -116,7 +118,7 @@ export default function SuccessStories() {
                     onClick={() => setActiveIdx(idx)}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === activeIdx ? "bg-accent w-6" : "bg-neutral-border hover:bg-primary/30"
                       }`}
-                    aria-label={`Ir al caso ${idx + 1}`}
+                    aria-label={language === "es" ? `Ir al caso ${idx + 1}` : `Go to case ${idx + 1}`}
                   />
                 ))}
               </div>
@@ -125,15 +127,15 @@ export default function SuccessStories() {
               <div className="flex space-x-2">
                 <button
                   onClick={handlePrev}
-                  className="p-2 border border-neutral-border hover:bg-neutral-bg rounded-lg text-primary hover:text-accent transition-colors focus:outline-none"
-                  aria-label="Caso anterior"
+                  className="p-2 border border-neutral-border hover:bg-neutral-bg rounded-lg text-primary hover:text-accent transition-colors focus:outline-none cursor-pointer"
+                  aria-label={language === "es" ? "Caso anterior" : "Previous case"}
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="p-2 border border-neutral-border hover:bg-neutral-bg rounded-lg text-primary hover:text-accent transition-colors focus:outline-none"
-                  aria-label="Siguiente caso"
+                  className="p-2 border border-neutral-border hover:bg-neutral-bg rounded-lg text-primary hover:text-accent transition-colors focus:outline-none cursor-pointer"
+                  aria-label={language === "es" ? "Siguiente caso" : "Next case"}
                 >
                   <ChevronRight className="h-5 w-5" />
                 </button>
@@ -150,25 +152,25 @@ export default function SuccessStories() {
               <span className="text-2xl font-technical font-extrabold">+20 hrs</span>
             </div>
             <p className="text-xs text-neutral-text/60 font-technical font-semibold uppercase tracking-wider">
-              Ahorro de Ingeniería Semanal
+              {t("successStories.metrics.engineering")}
             </p>
           </div>
           <div className="space-y-1">
             <div className="flex items-center justify-center space-x-2 text-primary">
               <BarChart className="h-5 w-5 text-accent" />
-              <span className="text-2xl font-technical font-extrabold">Módulo de Análisis</span>
+              <span className="text-2xl font-technical font-extrabold">{t("successStories.metrics.modules")}</span>
             </div>
             <p className="text-xs text-neutral-text/60 font-technical font-semibold uppercase tracking-wider">
-              Visualización Autogestiva
+              {t("successStories.metrics.modulesLabel")}
             </p>
           </div>
           <div className="space-y-1">
             <div className="flex items-center justify-center space-x-2 text-primary">
               <ShieldCheck className="h-5 w-5 text-accent" />
-              <span className="text-2xl font-technical font-extrabold">Cumplimiento B2B</span>
+              <span className="text-2xl font-technical font-extrabold">{t("successStories.metrics.compliance")}</span>
             </div>
             <p className="text-xs text-neutral-text/60 font-technical font-semibold uppercase tracking-wider">
-              Sustento bajo Leyes Ambientales
+              {t("successStories.metrics.complianceLabel")}
             </p>
           </div>
         </div>
