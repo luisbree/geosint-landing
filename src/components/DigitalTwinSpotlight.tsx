@@ -11,7 +11,7 @@ export default function DigitalTwinSpotlight() {
     <section id="digital-twin" className="py-20 bg-neutral-bg border-b border-neutral-border/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
           {/* Text Column (5 cols) */}
           <div className="lg:col-span-5 space-y-6 text-left">
@@ -71,12 +71,6 @@ export default function DigitalTwinSpotlight() {
                 alt="Digital Twin Hidráulico - Mapa de Luján y Grafos Topológicos"
                 className="w-full h-auto object-cover rounded-2xl group-hover:scale-[1.01] transition-transform duration-300"
               />
-
-              {/* Floating pill badge */}
-              <div className="absolute top-4 right-4 bg-marine-dark/85 backdrop-blur-md border border-white/10 text-white px-3.5 py-1.5 rounded-full text-xs font-technical flex items-center space-x-2 shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                <span>{t("digitalTwin.tag")}</span>
-              </div>
             </div>
           </div>
 

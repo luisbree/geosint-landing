@@ -166,6 +166,11 @@ export const es = {
     measure2: "2. Ejecutar una inspección de trazadores y aforos en los conductos pluviales urbanos que descargan en las inmediaciones para detectar posibles conexiones clandestinas.",
     measure3: "3. Fiscalizar las descargas y el manejo de efluentes de los lavaderos automotores y estaciones de servicio ubicadas en el radio de 1.600 metros.",
     measure4: "4. Implementar un plan de gestión de escorrentías sobre trazas viales y adyacencias para mitigar el aporte difuso de sales y materia orgánica.",
+    telemetryTitle: "PARÁMETROS CRÍTICOS Y TELEMETRÍA FORENSE",
+    telemetryParam1: "Oxígeno Disuelto (OD): 2.1 mg/L (Alerta Crítica)",
+    telemetryParam2: "Conexión Clandestina Probable: 88.7%",
+    telemetryParam3: "Marco: Dec 831/93 Anexo II · Tabla 1",
+    telemetryModel: "Genkit + Gemini 1.5 Pro · Latencia: 1.1s",
   },
   howItWorks: {
     tag: "La Trinidad de la Confianza Pericial",

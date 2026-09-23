@@ -166,6 +166,11 @@ export const en = {
     measure2: "2. Perform tracer inspection and flow gauging in urban stormwater outfalls discharging nearby to identify clandestine connections.",
     measure3: "3. Audit effluent handling and discharge compliance across commercial and vehicle-wash facilities within a 1,600m radius.",
     measure4: "4. Implement a stormwater runoff management plan along roadway alignments to mitigate diffuse influx of salts and organic matter.",
+    telemetryTitle: "CRITICAL PARAMETERS & FORENSIC TELEMETRY",
+    telemetryParam1: "Dissolved Oxygen (DO): 2.1 mg/L (Critical Alert)",
+    telemetryParam2: "Probable Clandestine Influx: 88.7%",
+    telemetryParam3: "Framework: Dec 831/93 Annex II · Table 1",
+    telemetryModel: "Genkit + Gemini 1.5 Pro · Latency: 1.1s",
   },
   howItWorks: {
     tag: "The Trinity of Forensic Trust",

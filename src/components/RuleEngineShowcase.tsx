@@ -11,7 +11,7 @@ export default function RuleEngineShowcase() {
     <section className="py-20 bg-white border-b border-neutral-border/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
           {/* Left Column (5 cols): Description and value proposition */}
           <div className="lg:col-span-5 space-y-6 text-left">

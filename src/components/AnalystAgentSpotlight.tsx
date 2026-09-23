@@ -11,7 +11,7 @@ export default function AnalystAgentSpotlight() {
     <section className="py-20 bg-white border-b border-neutral-border/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
           {/* Text Left Column (5 cols) */}
           <div className="lg:col-span-5 space-y-6 text-left order-2 lg:order-1">
@@ -82,7 +82,7 @@ export default function AnalystAgentSpotlight() {
               </div>
 
               {/* Measures List */}
-              <div className="space-y-2.5 text-xs sm:text-sm">
+              <div className="space-y-2.5 text-xs sm:text-sm mb-6">
                 <div className="p-3 sm:p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors flex items-start space-x-3">
                   <span className="text-neutral-200 leading-relaxed font-light">
                     {t("analystAgent.measure1")}
@@ -105,6 +105,27 @@ export default function AnalystAgentSpotlight() {
                   <span className="text-neutral-200 leading-relaxed font-light">
                     {t("analystAgent.measure4")}
                   </span>
+                </div>
+              </div>
+
+              {/* Telemetry and Parameters Footer */}
+              <div className="pt-4 border-t border-white/10 space-y-2">
+                <span className="text-[10px] font-technical uppercase font-bold tracking-wider text-white/50 block">
+                  {t("analystAgent.telemetryTitle")}
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] font-technical">
+                  <div className="bg-white/5 px-2.5 py-1.5 rounded-lg border border-white/10 text-amber-300">
+                    {t("analystAgent.telemetryParam1")}
+                  </div>
+                  <div className="bg-white/5 px-2.5 py-1.5 rounded-lg border border-white/10 text-cyan-300">
+                    {t("analystAgent.telemetryParam2")}
+                  </div>
+                  <div className="bg-white/5 px-2.5 py-1.5 rounded-lg border border-white/10 text-neutral-300">
+                    {t("analystAgent.telemetryParam3")}
+                  </div>
+                  <div className="bg-white/5 px-2.5 py-1.5 rounded-lg border border-white/10 text-violet-300">
+                    {t("analystAgent.telemetryModel")}
+                  </div>
                 </div>
               </div>
 
