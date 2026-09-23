@@ -13,8 +13,19 @@ export default function DigitalTwinSpotlight() {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
+          {/* Image & Interactive Graphic Column (7 cols) */}
+          <div className="lg:col-span-7 order-2 lg:order-1">
+            <div className="relative rounded-2xl overflow-hidden border border-neutral-border/80 shadow-2xl bg-marine-dark group">
+              <img
+                src="/digital_twin_map.png"
+                alt="Digital Twin Hidráulico - Mapa de Luján y Grafos Topológicos"
+                className="w-full h-auto object-cover rounded-2xl group-hover:scale-[1.01] transition-transform duration-300"
+              />
+            </div>
+          </div>
+
           {/* Text Column (5 cols) */}
-          <div className="lg:col-span-5 space-y-6 text-left">
+          <div className="lg:col-span-5 space-y-6 text-left order-1 lg:order-2">
             <div className="inline-flex items-center space-x-2 bg-primary-soft text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-primary/15 shadow-xs">
               <Waves className="h-3.5 w-3.5 text-accent" />
               <span>{t("digitalTwin.tag")}</span>
@@ -60,17 +71,6 @@ export default function DigitalTwinSpotlight() {
                 <span>{t("hero.ctaTrial")}</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
-            </div>
-          </div>
-
-          {/* Image & Interactive Graphic Column (7 cols) */}
-          <div className="lg:col-span-7">
-            <div className="relative rounded-2xl overflow-hidden border border-neutral-border/80 shadow-2xl bg-marine-dark group">
-              <img
-                src="/digital_twin_map.png"
-                alt="Digital Twin Hidráulico - Mapa de Luján y Grafos Topológicos"
-                className="w-full h-auto object-cover rounded-2xl group-hover:scale-[1.01] transition-transform duration-300"
-              />
             </div>
           </div>
 
