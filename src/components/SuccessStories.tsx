@@ -51,7 +51,7 @@ export default function SuccessStories() {
       {/* Visual background circle */}
       <div className="absolute -top-1/4 -right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full filter blur-3xl pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">

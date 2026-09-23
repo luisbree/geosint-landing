@@ -38,20 +38,20 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center">
 
         {/* Copywriting Section */}
-        <div className="max-w-5xl mx-auto space-y-6 mb-8 flex flex-col items-center">
+        <div className="w-full max-w-6xl mx-auto space-y-6 mb-10 flex flex-col items-center">
           <div className="inline-flex items-center space-x-2 bg-primary-soft text-primary px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide border border-primary/15 shadow-xs">
             <Sparkles className="h-3.5 w-3.5 text-accent animate-pulse" />
             <span>{t("hero.tag")}</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl text-primary leading-tight tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl text-primary leading-tight tracking-tight max-w-6xl">
             <span className="font-extrabold">{t("hero.title")}</span>{" "}
             <span className="font-light block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
               {t("hero.subtitle")}
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-neutral-text/85 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base sm:text-lg text-neutral-text/85 max-w-3xl mx-auto font-light leading-relaxed">
             {t("hero.desc")}
           </p>
 
@@ -90,7 +90,7 @@ export default function Hero() {
         </div>
 
         {/* Centerpiece Video Player Container */}
-        <div className="w-full max-w-5xl relative aspect-video rounded-2xl overflow-hidden border border-neutral-border shadow-2xl">
+        <div className="w-full max-w-7xl relative aspect-video rounded-2xl overflow-hidden border border-neutral-border shadow-2xl">
           <video
             ref={videoRef}
             className="w-full h-full object-cover"
