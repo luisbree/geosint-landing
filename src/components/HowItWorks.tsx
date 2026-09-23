@@ -66,7 +66,8 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="pt-12 pb-24 bg-radial from-accent-soft/10 via-neutral-bg to-neutral-bg border-y border-primary/5 relative overflow-hidden text-neutral-text">
+    <section id="confianza" className="pt-16 pb-24 bg-radial from-accent-soft/10 via-neutral-bg to-neutral-bg border-y border-primary/5 relative overflow-hidden text-neutral-text scroll-mt-20">
+      <div id="how-it-works" className="absolute -top-24" />
       {/* Background grids and abstract decorations */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none" />
       <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl pointer-events-none" />

@@ -40,7 +40,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-neutral-border ${
         scrolled
           ? "shadow-md py-3"
-          : "shadow-sm py-5"
+          : "shadow-xs py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,36 +54,57 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 text-sm">
             <a
               href="#home"
-              className="text-neutral-text/900 hover:text-primary font-medium transition-colors"
+              className="text-neutral-text hover:text-primary font-medium transition-colors"
             >
               {t("navbar.home")}
             </a>
             
             <a
-              href="#how-it-works"
-              className="px-3.5 py-1.5 rounded-full text-accent font-semibold bg-accent-soft hover:bg-accent hover:text-white transition-all duration-200 border border-accent/15"
+              href="#plataforma"
+              className="text-neutral-text hover:text-primary font-medium transition-colors"
             >
-              {t("navbar.howItWorks")}
+              {t("navbar.platform")}
+            </a>
+
+            <a
+              href="#confianza"
+              className="text-neutral-text hover:text-primary font-medium transition-colors"
+            >
+              {t("navbar.traceability")}
+            </a>
+
+            <a
+              href="#digital-twin"
+              className="text-neutral-text hover:text-primary font-medium transition-colors"
+            >
+              {t("navbar.digitalTwin")}
+            </a>
+
+            <a
+              href="#success-stories"
+              className="text-neutral-text hover:text-primary font-medium transition-colors"
+            >
+              {t("navbar.successStories")}
             </a>
             
             <a
-              href="#success-stories"
-              className="text-neutral-text/900 hover:text-primary font-medium transition-colors"
+              href="#precios"
+              className="text-neutral-text hover:text-primary font-medium transition-colors"
             >
-              {t("navbar.successStories")}
+              {t("navbar.pricing")}
             </a>
             
             {/* Language Selector Dropdown */}
             <div className="relative lang-selector flex items-center">
               <button
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                className="flex items-center space-x-1.5 text-neutral-text/900 hover:text-primary font-semibold text-sm transition-colors px-2 py-1.5 rounded-lg focus:outline-hidden cursor-pointer"
+                className="flex items-center space-x-1 text-neutral-text hover:text-primary font-semibold text-xs transition-colors px-2 py-1.5 rounded-lg focus:outline-hidden cursor-pointer"
               >
-                <Globe className="h-4.5 w-4.5 text-primary/80" />
-                <span className="uppercase text-xs tracking-wider">{language}</span>
+                <Globe className="h-4 w-4 text-primary/80" />
+                <span className="uppercase tracking-wider">{language}</span>
                 <ChevronDown className={`h-3 w-3 text-neutral-text/60 transition-transform duration-200 ${langDropdownOpen ? "rotate-180" : ""}`} />
               </button>
               
@@ -117,17 +138,38 @@ export default function Navbar() {
               )}
             </div>
 
-            <a
-              href={`${appUrl}/ddb`}
-              className="bg-primary text-white hover:bg-primary-hover px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-sm hover:shadow flex items-center space-x-1.5"
-            >
-              <span>{t("navbar.enter")}</span>
-              <ArrowRight className="h-4 w-4" />
-            </a>
+            {/* CTAs */}
+            <div className="flex items-center space-x-3">
+              <a
+                href={`${appUrl}/ddb`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary-hover font-semibold text-xs px-3 py-2 transition-colors"
+              >
+                {t("navbar.enter")}
+              </a>
+
+              <a
+                href="#contact"
+                className="bg-primary text-white hover:bg-primary-hover px-4 py-2 rounded-lg font-semibold text-xs transition-all duration-200 shadow-xs hover:shadow flex items-center space-x-1.5"
+              >
+                <span>{t("navbar.trialCta")}</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden flex items-center space-x-3">
+            {/* Mobile Language Button quick toggle */}
+            <button
+              onClick={() => setLanguage(language === "es" ? "en" : "es")}
+              className="flex items-center space-x-1 text-xs font-bold font-technical text-primary bg-primary-soft/50 px-2.5 py-1 rounded-md"
+            >
+              <Globe className="h-3.5 w-3.5" />
+              <span className="uppercase">{language}</span>
+            </button>
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-primary hover:text-accent p-2 focus:outline-none cursor-pointer"
@@ -141,65 +183,74 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-neutral-border transition-all duration-200 animate-in slide-in-from-top duration-150">
-          <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+        <div className="lg:hidden bg-white border-b border-neutral-border transition-all duration-200 animate-in slide-in-from-top duration-150">
+          <div className="px-4 pt-2 pb-6 space-y-2">
             <a
               href="#home"
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2.5 rounded-md text-base font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
+              className="block px-3 py-2 rounded-md text-sm font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
             >
               {t("navbar.home")}
             </a>
             
             <a
-              href="#how-it-works"
+              href="#plataforma"
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2.5 rounded-md text-base font-semibold text-accent bg-accent-soft hover:bg-accent hover:text-white transition-all duration-200"
+              className="block px-3 py-2 rounded-md text-sm font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
             >
-              {t("navbar.howItWorks")}
+              {t("navbar.platform")}
             </a>
-            
+
+            <a
+              href="#confianza"
+              onClick={() => setIsOpen(false)}
+              className="block px-3 py-2 rounded-md text-sm font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
+            >
+              {t("navbar.traceability")}
+            </a>
+
+            <a
+              href="#digital-twin"
+              onClick={() => setIsOpen(false)}
+              className="block px-3 py-2 rounded-md text-sm font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
+            >
+              {t("navbar.digitalTwin")}
+            </a>
+
             <a
               href="#success-stories"
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2.5 rounded-md text-base font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
+              className="block px-3 py-2 rounded-md text-sm font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
             >
               {t("navbar.successStories")}
             </a>
-            
-            {/* Mobile Language Selector */}
-            <div className="px-3 py-3 border-t border-neutral-border/60 flex items-center justify-between">
-              <span className="text-xs font-bold text-neutral-text/60 uppercase tracking-wider flex items-center">
-                <Globe className="h-4 w-4 mr-2 text-primary" /> {language === "es" ? "Idioma" : "Language"}
-              </span>
-              <div className="flex bg-neutral-bg p-0.5 rounded-lg border border-neutral-border">
-                <button
-                  onClick={() => setLanguage("es")}
-                  className={`px-3 py-1 rounded-md text-xs font-bold transition-all cursor-pointer ${
-                    language === "es" ? "bg-white text-primary shadow-xs" : "text-neutral-text/70"
-                  }`}
-                >
-                  ES
-                </button>
-                <button
-                  onClick={() => setLanguage("en")}
-                  className={`px-3 py-1 rounded-md text-xs font-bold transition-all cursor-pointer ${
-                    language === "en" ? "bg-white text-primary shadow-xs" : "text-neutral-text/70"
-                  }`}
-                >
-                  EN
-                </button>
-              </div>
-            </div>
 
             <a
-              href={`${appUrl}/ddb`}
+              href="#precios"
               onClick={() => setIsOpen(false)}
-              className="mt-2 w-full bg-primary text-white hover:bg-primary-hover px-4 py-3 rounded-lg font-semibold text-sm transition-all duration-200 flex items-center justify-center space-x-2"
+              className="block px-3 py-2 rounded-md text-sm font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
             >
-              <span>{t("navbar.enter")}</span>
-              <ArrowRight className="h-4 w-4" />
+              {t("navbar.pricing")}
             </a>
+
+            <div className="pt-2 border-t border-neutral-border flex flex-col gap-2">
+              <a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="w-full bg-primary text-white hover:bg-primary-hover px-4 py-2.5 rounded-lg font-semibold text-sm text-center transition-all shadow-xs"
+              >
+                {t("navbar.trialCta")}
+              </a>
+              <a
+                href={`${appUrl}/ddb`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="w-full text-primary border border-primary/20 hover:bg-primary-soft/40 px-4 py-2.5 rounded-lg font-semibold text-sm text-center transition-all"
+              >
+                {t("navbar.enter")}
+              </a>
+            </div>
           </div>
         </div>
       )}

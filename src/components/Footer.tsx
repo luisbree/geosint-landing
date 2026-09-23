@@ -72,10 +72,22 @@ export default function Footer() {
                 <a href="#home" className="hover:text-accent transition-colors font-light cursor-pointer">{t("navbar.home")}</a>
               </li>
               <li>
-                <a href="#how-it-works" className="hover:text-accent transition-colors font-light cursor-pointer">{t("navbar.howItWorks")}</a>
+                <a href="#plataforma" className="hover:text-accent transition-colors font-light cursor-pointer">{t("navbar.platform")}</a>
+              </li>
+              <li>
+                <a href="#confianza" className="hover:text-accent transition-colors font-light cursor-pointer">{t("navbar.traceability")}</a>
+              </li>
+              <li>
+                <a href="#digital-twin" className="hover:text-accent transition-colors font-light cursor-pointer">{t("navbar.digitalTwin")}</a>
+              </li>
+              <li>
+                <a href="#precios" className="hover:text-accent transition-colors font-light cursor-pointer">{t("navbar.pricing")}</a>
               </li>
               <li>
                 <a href="#success-stories" className="hover:text-accent transition-colors font-light cursor-pointer">{t("navbar.successStories")}</a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-accent transition-colors font-light cursor-pointer">{t("navbar.contact")}</a>
               </li>
             </ul>
           </div>

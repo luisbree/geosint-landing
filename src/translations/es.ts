@@ -1,22 +1,177 @@
 export const es = {
   navbar: {
     home: "Inicio",
-    howItWorks: "DIM Data Bus",
+    platform: "Plataforma",
+    traceability: "Trazabilidad",
+    digitalTwin: "Digital Twin",
     successStories: "Casos de Éxito",
+    pricing: "Precios",
+    contact: "Contacto",
+    howItWorks: "DIM Data Bus",
     enter: "Ingresar",
+    trialCta: "Trial 7 días",
+  },
+  trustStrip: {
+    badge: "Diseñado por geólogos, construido para peritos",
+    laws: [
+      "Ley 24.051",
+      "Ley 25.675",
+      "Código de Aguas PBA",
+      "Res. ADA",
+      "Res. ACUMAR",
+      "Estándares ESG",
+    ],
   },
   hero: {
     tag: "Tecnología y Medio Ambiente Integrados",
+    companyBadge: "GeoSint · Inteligencia Territorial",
+    productBadge: "DIM Data Bus — Inteligencia Ambiental Centralizada",
     title: "GeoSint: Soluciones de Inteligencia Territorial",
-    subtitle: "Plataforma de Gestión y Análisis de Datos Geoespaciales y Normativas Ambientales.",
-    desc: "Análisis Ambiental Autogestivo para Consultoras. Transformá la información geoespacial y series temporales en decisiones con precisión, eficiencia y cumplimiento normativo.",
+    subtitle: "DIM Data Bus · Plataforma de Gestión y Análisis de Datos Ambientales",
+    desc: "Análisis Ambiental Autogestivo para Consultoras. Del dato de campo al informe pericial, sin margen de error: transformá la información geoespacial y series temporales en decisiones con precisión, eficiencia y cumplimiento normativo.",
+    badges: {
+      sha: "SHA-256 en cada muestra",
+      offline: "100% offline-first",
+      protocols: "37 protocolos estructurados",
+    },
+    ctaTrial: "Solicitá tu Trial de 7 días",
+    ctaPlatform: "Ver la plataforma completa",
     videoFallback: "Tu navegador no soporta la reproducción de videos HTML5.",
   },
-  howItWorks: {
-    tag: "Nuestra Columna Vertebral",
+  platformModules: {
+    tag: "Una sola plataforma",
     title: "DIM Data Bus: ",
-    titleGradient: "Inteligencia Ambiental Centralizada",
-    desc: "Integramos series temporales y datos geoespaciales multi-paramétricos, transformando datos brutos en insights accionables para una gestión ambiental sin precedentes.",
+    titleGradient: "Todo el ciclo de vida del dato ambiental, integrado",
+    desc: "Lo que antes se contrataba por separado — captura en terreno, GIS, modelado hidráulico, cálculo forense e inteligencia pericial — ahora vive en una única arquitectura.",
+    modules: [
+      {
+        id: "field-capture",
+        title: "Captura de Campo Trazable",
+        desc: "Hash SHA-256 en tiempo real, GPS Heartbeat cada 60s y Audit Trail atómico en cada registro cargado en terreno.",
+        tag: "Trazabilidad",
+      },
+      {
+        id: "native-gis",
+        title: "Motor GIS Vectorial Nativo",
+        desc: "Construido sobre OpenLayers v10, sin dependencia de ArcGIS ni Google Maps. Exportación a GeoJSON, CSV y ZIP compatible con QGIS.",
+        tag: "GIS Nativo",
+      },
+      {
+        id: "protocols",
+        title: "37 Protocolos Estructurados",
+        desc: "Monitoreo normalizado de agua superficial, subterránea, suelo, aire, biota, geología, hidrocarburos y residuos peligrosos.",
+        tag: "Normalización",
+      },
+      {
+        id: "digital-twin",
+        title: "Digital Twin Hidráulico",
+        desc: "Modela hacia dónde escurren los contaminantes en el territorio con DEM satelital, curvas de nivel y grafos topológicos.",
+        tag: "Hidrología",
+      },
+      {
+        id: "rules-engine",
+        title: "Motor de Reglas y Concomitancias",
+        desc: "Detecta en tiempo real superaciones de límites normativos y alerta sinergias hidroquímicas apenas se carga el analito.",
+        tag: "Tiempo Real",
+      },
+      {
+        id: "forensic-calc",
+        title: "Biblioteca de Cálculo Forense",
+        desc: "Índices LSI, Ryznar, ratios HAP/DDT, RAS, CSR, balance iónico y diagnóstico de origen de hidrocarburos (petrogénico vs. pirogénico).",
+        tag: "Cálculo Forense",
+      },
+      {
+        id: "analyst-agent",
+        title: "Agente Pericial de Asistencia Analítica",
+        desc: "Construido con Google Genkit y Gemini: asiste al especialista en la interpretación, generación de hipótesis y recomendaciones de protocolos extendidos.",
+        tag: "IA Contextual",
+      },
+      {
+        id: "knowledge-graph",
+        title: "Grafo de Conocimiento 3D",
+        desc: "Visualización inmersiva en WebGL/Three.js de plumas y relaciones causales, pensada para presentaciones ante directorios o tribunales.",
+        tag: "Visualización 3D",
+      },
+      {
+        id: "offline-multitenancy",
+        title: "Offline-First y Multi-Tenancy",
+        desc: "PWA + IndexedDB para trabajo en campo extremo sin señal, con arquitectura zero-trust y cifrado AES-256-CBC.",
+        tag: "Infraestructura",
+      },
+    ],
+  },
+  ruleEngineModal: {
+    tag: "Motor de Reglas y Concomitancias",
+    title: "Detección forense en tiempo real al ingresar el dato",
+    desc: "Apenas el técnico ingresa un valor en el terreno, DIM Data Bus evalúa los marcos legales vigentes, calcula índices agronómicos o forenses y alerta sinergias hidroquímicas.",
+    alertTitle: "Alerta de Impacto: Fluoruros (mg/L)",
+    hypothesisLabel: "HIPÓTESIS ASOCIADA",
+    hypothesis: "Afloramiento Geogénico por Intersección Freática",
+    techDescLabel: "DESCRIPCIÓN TÉCNICA",
+    techDesc: "La cota de fondo de la excavación alcanzó niveles acuíferos ricos en fluoruros naturales (vidrios volcánicos), aportando caudal base salino al canal.",
+    actionLabel: "ACCIÓN REQUERIDA",
+    irrigationCalcTitle: "CÁLCULO DE ÍNDICES DE RIEGO (AGRONÓMICOS)",
+    rasTitle: "SODIO (RAS)",
+    rasValue: "5.88",
+    rasBadge: "Bajo",
+    rasDesc: "Bajo peligro de sodio (apta para la mayoría de suelos)",
+    csrTitle: "CARBONATO (CSR)",
+    csrValue: "0.93",
+    csrBadge: "Bueno",
+    csrDesc: "Buena calidad (apta para riego prolongado)",
+    concomitantLabel: "POTENCIACIÓN CONCOMITANTE DETECTADA",
+    concomitant1Title: "Concomitante: Arsénico Total (Elevado) → Firma Geogénica Pampeana",
+    concomitant1Desc: "La detección combinada es la prueba forense irrefutable de que el agua es de origen freático natural. Exige rediseñar la estrategia de manejo de aguas de achique.",
+    concomitant2Title: "Concomitante: Fósforo Total (Elevado) → Sinergia de Aporte Agrícola",
+    concomitant2Desc: "Confirma que el fluoruro ingresó como impureza del lavado de fertilizantes (superfosfatos). Obliga a delimitar franjas buffer vegetadas.",
+    limitsLabel: "LÍMITES NORMATIVOS EXCEDIDOS",
+    limit1: "2. Límite Consumo Humano Medio - CAA Art 982",
+    limit1Val: "> 1 mg/L",
+    limit2: "3. Límite Máximo Irrigación - Dec 831-93 Tabla 5",
+    limit2Val: "> 1 mg/L",
+    limit3: "4. Límite Vida Acuática Dulce - Dec 831-93 Tabla 2",
+    limit3Val: "> 1.4 mg/L",
+  },
+  digitalTwin: {
+    tag: "Digital Twin Hidráulico",
+    title: "¿Hacia dónde va el contaminante? ",
+    titleGradient: "La plataforma lo muestra.",
+    desc: "A partir de un Modelo de Elevación Digital (DEM) satelital y grafos topológicos, DIM Data Bus modela el escurrimiento superficial y subterráneo del territorio. El resultado es una trayectoria de contaminación defendible, no una estimación a mano alzada.",
+    item1: "Escurrimiento superficial y subterráneo modelado sobre DEM satelital real y curvas topográficas.",
+    item2: "Visualización vectorial con grafos topológicos, nodos discretizados y flujos dinámicos de escorrentía.",
+    item3: "Informes cartográficos y vectoriales listos para presentar ante directorios, auditorías o peritajes judiciales.",
+    cardBadge: "Digital Twin Hidráulico",
+    activeStatus: "ACTIVO",
+    cardStat1Label: "Nodos discretizados:",
+    cardStat1Val: "1179",
+    cardStat2Label: "Flujos activos:",
+    cardStat2Val: "430",
+    cardStat3Label: "Barreras topográficas:",
+    cardStat3Val: "34",
+    radiusLabel: "Radio RB:",
+    radiusVal: "1.80 km",
+    osmBtn: "Elementos OSM",
+    topoBtn: "Grafo Topológico",
+  },
+  analystAgent: {
+    tag: "Inteligencia Aumentada",
+    title: "Agente pericial que asiste al Analista",
+    titleGradient: "en la interpretación, generación de hipótesis y recomendaciones de protocolos extendidos",
+    desc: "Construido sobre Google Genkit y Gemini: guía al técnico y al especialista según geomorfología, georreferenciación y matriz ambiental detectada, sugiriendo el encuadre analítico y las medidas prioritarias en el momento exacto.",
+    cardHeader: "DIM Data Bus · Diagnóstico Asistido por Agente Pericial",
+    hypothesisTitle: "2. Influencia acumulativa de escorrentías pluviales y descargas pluvio-cloacales clandestinas difusas",
+    hypothesisDesc: "La presencia simultánea de múltiples actividades en el entorno (estaciones de servicio, centros de salud, lavaderos vehiculares), sumado a la caída del oxígeno disuelto, respalda la hipótesis de una descarga orgánica sostenida de baja intensidad que deprime la capacidad respiratoria del curso de agua sin llegar a generar una toxicidad aguda detectable por los analitos generales.",
+    recommendedTitle: "MEDIDAS RECOMENDADAS",
+    measure1: "1. Intensificar el monitoreo hidrobiológico y fisicoquímico con una frecuencia quincenal en el punto crítico para evaluar la tasa de consumo de oxígeno disuelto.",
+    measure2: "2. Ejecutar una inspección de trazadores y aforos en los conductos pluviales urbanos que descargan en las inmediaciones para detectar posibles conexiones clandestinas.",
+    measure3: "3. Fiscalizar las descargas y el manejo de efluentes de los lavaderos automotores y estaciones de servicio ubicadas en el radio de 1.600 metros.",
+    measure4: "4. Implementar un plan de gestión de escorrentías sobre trazas viales y adyacencias para mitigar el aporte difuso de sales y materia orgánica.",
+  },
+  howItWorks: {
+    tag: "La Trinidad de la Confianza Pericial",
+    title: "Datos que no solo son productivos, ",
+    titleGradient: "son defensibles",
+    desc: "DIM Data Bus convierte cada registro de campo en evidencia matemáticamente inalterable, apta para una auditoría o un tribunal.",
     pilarBadge: "Pilar",
     rigorCientifico: "Rigor Científico",
     garantiaComercial: "Garantía Comercial",
@@ -46,6 +201,28 @@ export const es = {
       }
     ]
   },
+  targetAudiences: {
+    tag: "Para quién es GeoSint",
+    title: "Una plataforma, ",
+    titleGradient: "tres formas de transformar la gestión ambiental",
+    audiences: [
+      {
+        badge: "FOCO ACTUAL",
+        title: "Consultoras Ambientales",
+        desc: "Profesionalizá y blindá tu operación técnica. Tus informes salen del campo con firma criptográfica SHA-256 y trazabilidad legal, no del escritorio con planillas Excel propensas a errores.",
+      },
+      {
+        badge: "MEDIANO PLAZO",
+        title: "Industrias con Compliance Propio",
+        desc: "Tu póliza de seguro ambiental y cumplimiento ESG. Demostrá debida diligencia y control continuo antes de que llegue la inspección estatal — aplicable a petróleo & gas, minería, agroindustria y manufactura.",
+      },
+      {
+        badge: "POSICIONAMIENTO",
+        title: "Organismos y Poder Judicial",
+        desc: "Una fiscalía ambiental digital. Cada informe pericial incluye cadena de custodia inmutable y gemelo hidráulico que demuestra matemáticamente hacia dónde migró el contaminante.",
+      },
+    ],
+  },
   successStories: {
     title: "GeoSint en Acción: Historias de Impacto",
     desc: "Conocé cómo consultoras líderes obtienen autonomía analítica y garantizan el cumplimiento normativo en proyectos reales.",
@@ -67,6 +244,58 @@ export const es = {
       }
     ]
   },
+  pricing: {
+    tag: "Precios",
+    title: "Un plan para cada etapa de tu operación",
+    subtitle: "Todos los planes son SIN limitación del número de usuarios. Precios de referencia en USD/mes.",
+    unlimitedBadge: "Usuarios ILIMITADOS en todos los planes",
+    ctaTrial: "Empezar trial",
+    ctaSales: "Hablar con ventas",
+    plans: [
+      {
+        name: "Starter",
+        price: "$280",
+        period: "/mes",
+        users: "Usuarios ilimitados",
+        features: [
+          "Captura de campo con trazabilidad legal",
+          "Protocolos de monitoreo estandarizados",
+          "Motor GIS y exportación universal (GeoJSON/CSV)",
+          "Sin limitación de usuarios",
+          "Audit Trail básico con diffs"
+        ]
+      },
+      {
+        name: "Pro",
+        badge: "MÁS ELEGIDO",
+        price: "$550",
+        period: "/mes",
+        users: "Usuarios ilimitados",
+        features: [
+          "Todo lo incluido en Starter",
+          "Los 37 protocolos normalizados completos",
+          "Digital Twin Hidráulico sobre DEM satelital",
+          "Biblioteca de cálculo forense (LSI, RAS, etc.)",
+          "Motor de reglas y concomitancias en tiempo real",
+          "Sin limitación de usuarios"
+        ]
+      },
+      {
+        name: "Enterprise",
+        price: "$1.600",
+        period: "/mes",
+        users: "Usuarios ilimitados",
+        features: [
+          "Todo lo incluido en Pro",
+          "Agente pericial de asistencia analítica (Genkit + Gemini)",
+          "Grafo de Conocimiento 3D inmersivo (WebGL)",
+          "Soporte prioritario y SLA garantizado",
+          "Multi-tenancy con cifrado AES-256",
+          "Sin limitación de usuarios"
+        ]
+      }
+    ]
+  },
   contactForm: {
     tag: "Ponete en Contacto",
     title: "Transformá tus Datos en Decisiones Fundamentadas",
@@ -75,7 +304,7 @@ export const es = {
     trialItems: [
       "Licencia de siete días sin restricciones de funcionalidad.",
       "Cantidad ILIMITADA de usuarios por empresa.",
-      "Todas planillas de monitoreo estandarizadas: Agua superficial, Agua Subterránea, Calidad de Aire, Suelos.",
+      "Todas las planillas de monitoreo estandarizadas: Agua superficial, Agua Subterránea, Calidad de Aire, Suelos.",
       "2 Campañas; 3 Estaciones de Monitoreo; 6 Reportes (2 por Estación); 24 Planillas; 60 Fotos"
     ],
     successTitle: "¡Solicitud Enviada con Éxito!",
@@ -149,54 +378,100 @@ export const es = {
         ],
         metrics: "Optimiza la gestión de riesgos en proyectos hidráulicos",
         mockUI: {
-          title: "VISOR PLUMAS 3D",
-          file: "MODELO_DISPERSIÓN_V1",
-          solute: "Soluto: Nitratos",
-          exceedsLimit: "Exceso Límite",
-          aquifer: "Acuífero: Pampeano",
-          monitoring: "Monitoreo: 5 Pozos - Coef. Dispersión: 0.15 m²/d"
+          title: "VISOR DE DISPERSIÓN 3D",
+          file: "SIMULACIÓN_PLUMA_BENCENO.DAT",
+          estErosion: "Concentración Máxima",
+          sedimentation: "Radio de Dispersión",
+          profileView: "Perfil de Concentración 3D",
+          compliance: "Cumplimiento: Ley 25.688 - Nivel de Alerta: MEDIO"
         }
       },
       {
         id: "acuiferos",
-        title: "Módulo de Evaluación de Vulnerabilidad de Acuíferos",
-        shortDesc: "Mapeá y simulá riesgos de filtración en 3D, integrando piezometría y conductividad hidráulica. Reducí pasivos ambientales y fortalecé la responsabilidad hídrica en conformidad con la Ley N° 25.688.",
-        fullDesc: "Evalúa la susceptibilidad a la contaminación de acuíferos libres y semiconfinados mediante metodologías internacionales parametrizadas (GOD/DRASTIC) y simulaciones 3D personalizadas. Integra datos de litología, recarga neta y profundidad de la napa para generar mapas de vulnerabilidad interactivos.",
-        law: "Ley Nacional N° 25.688 (Régimen de Gestión Ambiental de Aguas - Protección del Recurso)",
+        title: "Evaluador de Vulnerabilidad de Acuíferos",
+        shortDesc: "Calculá índices de vulnerabilidad (DRASTIC, GOD) de forma automatizada. Identificá zonas críticas y optimizá la toma de decisiones para la protección del recurso hídrico subterráneo.",
+        fullDesc: "Sistema automatizado para el cálculo espacial de índices hidrogeológicos de vulnerabilidad a la contaminación. Integra profundidad del agua, recarga neta, litología del acuífero, tipo de suelo, topografía, impacto de la zona vadosa y conductividad hidráulica.",
+        law: "Ley Provincial N° 12.257 (Código de Aguas de la Prov. de Buenos Aires)",
         benefits: [
-          "Clasificación automática de vulnerabilidad (Baja, Media, Alta)",
-          "Simulaciones de recarga y transporte de solutos en la zona no saturada",
-          "Reducción directa de pasivos ambientales en proyectos de infraestructura",
-          "Informes consolidados con validez legal"
+          "Cálculo automatizado de índices DRASTIC y GOD",
+          "Generación de mapas temáticos de zonificación de riesgo",
+          "Detección de incompatibilidades de uso del suelo",
+          "Exportación de capas GIS estandarizadas (GeoJSON, Shapefile)"
         ],
-        metrics: "Reduce pasivos ambientales y previene filtraciones",
+        metrics: "Disminuye el tiempo de confección de mapas hidrogeológicos",
         mockUI: {
-          title: "EVALUACIÓN VULNERABILIDAD",
-          file: "MÉTODO: DRASTIC",
-          napaDepth: "Prof. Napa",
-          recharge: "Recarga",
-          lithology: "Litología",
-          riskZone: "Zonificación de Riesgo:",
-          moderate: "MODERADO",
-          drasticIndex: "Índice DRASTIC:"
+          title: "ÍNDICE DE VULNERABILIDAD DRASTIC",
+          file: "CAPA_HIDROGEOLOGICA_ZONA_NORTE.SHP",
+          estErosion: "Índice Medio",
+          sedimentation: "Área Vulnerable",
+          profileView: "Zonificación de Riesgo",
+          compliance: "Cumplimiento: Ley 12.257 - Estado: EVALUADO"
         }
       },
       {
-        id: "as-a-service",
-        title: "Análisis Predictivo As-a-Service",
-        shortDesc: "Activá reportes y modelos pre-configurados para estimar riesgos y la evolución de plumas. Optimizá recursos y tomá decisiones fundamentadas con total autonomía.",
-        fullDesc: "Un motor en la nube que procesa tus datos bajo plantillas pre-configuradas para generar informes ejecutivos de simulación al instante. Diseñado para analistas ambientales que requieren resultados rápidos con bases científicas sólidas sin requerir infraestructura de cómputo local.",
-        law: "Normativas Nacionales e Internacionales de Calidad de Agua y Suelo",
+        id: "hidrico",
+        title: "Calculador de Balance Hídrico y Series Temporales",
+        shortDesc: "Modelá recargas de acuíferos, escorrentía superficial y evapotranspiración con datos climáticos históricos y satelitales. Fundamentá solicitudes de permisos de vuelco y extracción.",
+        fullDesc: "Herramienta de procesamiento de balances hídricos climáticos y dinámicos a escala de cuenca o predio. Cruza precipitaciones, evapotranspiración potencial (Thornthwaite, Penman-Monteith) y caudales para predecir déficits o excesos hídricos estacionarios.",
+        law: "Resolución ADA N° 333/17 (Normas de Vertido y Explotación del Recurso Hídrico)",
         benefits: [
-          "Acceso instantáneo sin licencias de software complejas",
-          "Algoritmos calibrados y validados científicamente",
-          "Reportes PDF personalizables con la marca de su consultora",
-          "Ahorro de hasta un 60% en costos de licencias e ingeniería"
+          "Integración de datos meteorológicos satelitales automáticos",
+          "Proyecciones estacionales de oferta hídrica",
+          "Cálculo automático de reservas de almacenamiento en suelo",
+          "Informes ejecutivos aptos para presentación ante la Autoridad del Agua (ADA)"
         ],
-        metrics: "Ahorra costos operativos y agiliza entregas",
+        metrics: "Acelera los cálculos hidrológicos tradicionales",
         mockUI: {
-          title: "PREDICTIVO AS-A-SERVICE",
-          file: "GENERADOR DE REPORTES",
+          title: "BALANCE HÍDRICO SERIE 2015-2025",
+          file: "ESTACION_METEO_DATOS.CSV",
+          estErosion: "Recarga Neta Estimada",
+          sedimentation: "Déficit Estival",
+          profileView: "Curva de Variación Estacional",
+          compliance: "Cumplimiento: Res. ADA 333/17 - Estado: CONFORME"
+        }
+      },
+      {
+        id: "confinamiento",
+        title: "Evaluador de Aptitud y Aislación Hidráulica de Recintos de Confinamiento",
+        shortDesc: "Simulá el comportamiento geotécnico e hidrogeológico de rellenos de seguridad, diques de colas y piletas de evaporación. Verificá la estanqueidad y el cumplimiento con normativas de residuos peligrosos.",
+        fullDesc: "Módulo integral de evaluación de integridad y permeabilidad de barreras geológicas y liners sintéticos en recintos de confinamiento de residuos peligrosos o efluentes industriales. Analiza espesor de arcillas, coeficientes de permeabilidad (k), gradientes hidráulicos y riesgos de rotura por presión hidrostática o sobrecarga.",
+        law: "Ley Nacional N° 24.051 (Residuos Peligrosos - Cap. IV: De las Plantas de Tratamiento y Disposición Final)",
+        benefits: [
+          "Verificación automática de espesor equivalente de barrera geológica según Ley 24.051",
+          "Modelado de transporte advectivo-dispersivo a través de barreras multicapa",
+          "Cálculo del factor de seguridad geotécnico de taludes de contención",
+          "Alertas tempranas de gradiente hidráulico crítico y riesgo de subpresión"
+        ],
+        metrics: "Mitiga riesgos de filtración en depósitos de residuos",
+        mockUI: {
+          title: "INTEGRIDAD DE RECINTO DE CONFINAMIENTO",
+          file: "MONITOREO_CELDA_SEGURIDAD_4.JSON",
+          estErosion: "Permeabilidad Media (k)",
+          sedimentation: "Gradiente Hidráulico",
+          profileView: "Corte Estratigráfico y Barrera",
+          compliance: "Cumplimiento: Ley 24.051 Dec. 831/93 - Estado: APTO"
+        }
+      },
+      {
+        id: "montecarlo",
+        title: "Evaluador de Riesgo Probabilístico de Vuelco",
+        shortDesc: "Simulá escenarios de dilución de contaminantes en cuerpos receptores mediante Monte Carlo (10.000 iteraciones). Determiná la probabilidad de excedencia normativa antes de realizar el vuelco.",
+        fullDesc: "Herramienta avanzada de simulación estocástica que modela la interacción entre efluentes vertidos y la hidrodinámica del cuerpo receptor. Al considerar la variabilidad natural del caudal y las fluctuaciones en la concentración del contaminante, el módulo estima con precisión matemática la probabilidad de exceder los límites legales.",
+        law: "Resolución ADA N° 333/17 (Normas de Vertido)",
+        benefits: [
+          "10.000 iteraciones automáticas por simulación",
+          "Distribución de probabilidad de concentración aguas abajo",
+          "Detección de condiciones hidrológicas críticas de falla",
+          "Reporte cuantitativo descargable para sustentar descargos y presentaciones"
+        ],
+        metrics: "Optimiza la certidumbre en planes de contingencia ambiental",
+        mockUI: {
+          title: "SIMULADOR MONTE CARLO DE DILUCIÓN",
+          file: "VUELCO_PARAMETROS_CAUDAL.CSV",
+          estErosion: "Concentración Mediana",
+          sedimentation: "Probabilidad de Excedencia",
+          profileView: "Distribución de Probabilidad",
+          compliance: "Cumplimiento: Res. ADA 333/17 - Riesgo: MODERADO",
           monteCarlo: "Simulación Monte Carlo: Completada (10k iteraciones)",
           pdfReport: "Reporte de Impacto PDF: Generado",
           downloadCta: "Descargar Reporte (.pdf)"
@@ -212,15 +487,19 @@ export const es = {
     }
   },
   footer: {
-    brandDesc: "Plataforma autogestiva de análisis y gestión de datos ambientales para consultoras. Decisiones técnicas y normativas con total autonomía y precisión.",
-    navigationTitle: "Navegación",
+    brandDesc: "GeoSint provee DIM Data Bus: análisis ambiental autogestivo para consultoras. Del campo al informe pericial, sin margen de error.",
+    navigationTitle: "Plataforma",
     legalTitle: "Sustento Legal",
+    contactTitle: "Contacto",
+    contactEmail: "contacto@geosint.com.ar",
+    contactPhone: "+54 221 3183040",
+    contactLocation: "La Plata, Argentina",
     laws: [
+      "Ley Nacional N° 24.051 de Residuos Peligrosos",
       "Ley Nacional N° 25.675 Ley General del Ambiente",
       "Ley Nacional N° 25.688 Régimen de Gestión Ambiental de Aguas",
-      "Ley Provincial N° 11.723 Ley Integral del Medio Ambiente",
-      "Ley Provincial N° 12.257 Código de Aguas",
-      "Decreto N° 1741/96, Resolución N° 153/06, Resolución N° 178/06"
+      "Ley Provincial N° 12.257 Código de Aguas PBA",
+      "Resoluciones ADA y ACUMAR · Estándares ESG"
     ],
     privacyLink: "Política de Privacidad",
     termsLink: "Términos de Servicio",
