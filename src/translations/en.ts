@@ -5,7 +5,7 @@ export const en = {
     traceability: "Traceability",
     digitalTwin: "Digital Twin",
     successStories: "Success Stories",
-    pricing: "Pricing",
+    pricing: "Plans",
     contact: "Contact",
     howItWorks: "DIM Data Bus",
     enter: "Log In",

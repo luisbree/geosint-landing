@@ -26,6 +26,10 @@
 body {
   font-family: var(--font-body);
   background-color: var(--color-neutral-bg);
+  background-image: 
+    linear-gradient(to right, rgba(0, 77, 64, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 77, 64, 0.045) 1px, transparent 1px);
+  background-size: 24px 24px;
   color: var(--color-neutral-text);
   overflow-x: hidden;
 }

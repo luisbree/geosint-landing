@@ -8,7 +8,6 @@ import DigitalTwinSpotlight from "@/components/DigitalTwinSpotlight";
 import AnalystAgentSpotlight from "@/components/AnalystAgentSpotlight";
 import HowItWorks from "@/components/HowItWorks";
 import TargetAudiences from "@/components/TargetAudiences";
-import SuccessStories from "@/components/SuccessStories";
 import Pricing from "@/components/Pricing";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
@@ -45,10 +44,7 @@ export default function Home() {
         {/* Section 8: Audiencias y Segmentos */}
         <TargetAudiences />
 
-        {/* Section 9: Casos de Éxito e Impacto */}
-        <SuccessStories />
-
-        {/* Section 10: Planes y Precios sin límite de usuarios */}
+        {/* Section 9: Planes y Precios sin límite de usuarios */}
         <Pricing />
 
         {/* Section 11: Free Trial 7 días y Formulario de Contacto */}

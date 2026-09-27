@@ -36,7 +36,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
+    <>
+      <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-neutral-border ${
         scrolled
           ? "shadow-md py-3"
@@ -84,14 +85,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#success-stories"
-              className="text-neutral-text hover:text-primary font-medium transition-colors"
-            >
-              {t("navbar.successStories")}
-            </a>
-            
-            <a
-              href="#precios"
+              href="#planes"
               className="text-neutral-text hover:text-primary font-medium transition-colors"
             >
               {t("navbar.pricing")}
@@ -144,17 +138,9 @@ export default function Navbar() {
                 href={`${appUrl}/ddb`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:text-primary-hover font-semibold text-xs px-3 py-2 transition-colors"
+                className="text-primary hover:text-primary-hover font-bold text-xs uppercase tracking-wider px-3.5 py-1.5 rounded-lg border border-primary/20 hover:bg-primary-soft/40 transition-all cursor-pointer"
               >
                 {t("navbar.enter")}
-              </a>
-
-              <a
-                href="#contact"
-                className="bg-primary text-white hover:bg-primary-hover px-4 py-2 rounded-lg font-semibold text-xs transition-all duration-200 shadow-xs hover:shadow flex items-center space-x-1.5"
-              >
-                <span>{t("navbar.trialCta")}</span>
-                <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>
@@ -217,16 +203,9 @@ export default function Navbar() {
               {t("navbar.digitalTwin")}
             </a>
 
-            <a
-              href="#success-stories"
-              onClick={() => setIsOpen(false)}
-              className="block px-3 py-2 rounded-md text-sm font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
-            >
-              {t("navbar.successStories")}
-            </a>
 
             <a
-              href="#precios"
+              href="#planes"
               onClick={() => setIsOpen(false)}
               className="block px-3 py-2 rounded-md text-sm font-medium text-neutral-text hover:bg-primary/5 hover:text-primary transition-colors"
             >
@@ -254,6 +233,26 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+      </nav>
+
+      {/* Floating Free Trial Button - Always visible, aligned right below INGRESAR button */}
+      <aside
+        aria-label="Solicitud de Free Trial"
+        className={`fixed z-40 left-0 right-0 pointer-events-none transition-all duration-300 ${
+          scrolled ? "top-[68px]" : "top-[82px]"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end">
+          <a
+            href="#contact"
+            className="pointer-events-auto bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm tracking-wide shadow-lg hover:shadow-xl hover:scale-105 border border-accent/40 backdrop-blur-md flex items-center space-x-2 transition-all duration-200 group cursor-pointer"
+            title={t("navbar.trialCta")}
+          >
+            <span>{t("navbar.trialCta")}</span>
+            <ArrowRight className="h-3.5 w-3.5 text-accent group-hover:translate-x-0.5 transition-transform" />
+          </a>
+        </div>
+      </aside>
+    </>
   );
 }

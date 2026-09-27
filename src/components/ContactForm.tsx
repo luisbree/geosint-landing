@@ -94,7 +94,7 @@ export default function ContactForm() {
   const trialItems = t("contactForm.trialItems") as string[];
 
   return (
-    <section id="contact" className="py-24 bg-neutral-bg relative overflow-hidden">
+    <section id="contact" className="py-24 bg-transparent relative overflow-hidden">
       {/* Background radial gradients */}
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full filter blur-3xl pointer-events-none" />
 

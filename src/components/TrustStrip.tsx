@@ -9,7 +9,7 @@ export default function TrustStrip() {
   const laws: string[] = t("trustStrip.laws") || [];
 
   return (
-    <section className="w-full bg-white border-y border-neutral-border py-6 relative z-20">
+    <section className="w-full bg-white/70 backdrop-blur-xs border-y border-neutral-border/70 py-6 relative z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-center gap-y-3 gap-x-6 text-xs sm:text-sm font-technical">
           <div className="flex items-center space-x-2 text-primary font-bold tracking-wide mr-2">

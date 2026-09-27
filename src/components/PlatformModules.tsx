@@ -39,9 +39,8 @@ export default function PlatformModules() {
   const modules: ModuleData[] = t("platformModules.modules") || [];
 
   return (
-    <section id="plataforma" className="pt-20 pb-20 bg-neutral-bg relative overflow-hidden text-neutral-text border-b border-neutral-border/50">
+    <section id="plataforma" className="pt-20 pb-20 bg-transparent relative overflow-hidden text-neutral-text border-b border-neutral-border/50">
       {/* Background decorations */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none" />
       <div className="absolute top-1/4 right-1/10 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/10 w-96 h-96 bg-accent/5 rounded-full filter blur-3xl pointer-events-none" />
 

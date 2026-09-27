@@ -21,7 +21,7 @@ export default function TargetAudiences() {
   const audiences: Audience[] = t("targetAudiences.audiences") || [];
 
   return (
-    <section className="py-20 bg-neutral-bg border-b border-neutral-border/60 relative overflow-hidden">
+    <section className="py-20 bg-transparent border-b border-neutral-border/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

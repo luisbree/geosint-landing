@@ -47,7 +47,7 @@ export default function SuccessStories() {
   };
 
   return (
-    <section id="success-stories" className="py-24 bg-primary-soft/30 border-y border-primary/5 relative overflow-hidden">
+    <section id="success-stories" className="py-24 bg-transparent border-y border-primary/5 relative overflow-hidden">
       {/* Visual background circle */}
       <div className="absolute -top-1/4 -right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full filter blur-3xl pointer-events-none" />
 

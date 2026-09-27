@@ -28,10 +28,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-28 pb-16 flex flex-col justify-center items-center bg-radial from-accent-soft/20 via-neutral-bg to-neutral-bg overflow-hidden text-center"
+      className="relative min-h-screen pt-28 pb-16 flex flex-col justify-center items-center bg-radial from-accent-soft/20 via-transparent to-transparent overflow-hidden text-center"
     >
-      {/* Background grids and abstract decorations */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none" />
+      {/* Abstract ambient glow decorations */}
       <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/10 w-96 h-96 bg-accent/5 rounded-full filter blur-3xl pointer-events-none" />
 

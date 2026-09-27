@@ -5,7 +5,7 @@ export const es = {
     traceability: "Trazabilidad",
     digitalTwin: "Digital Twin",
     successStories: "Casos de Éxito",
-    pricing: "Precios",
+    pricing: "Planes",
     contact: "Contacto",
     howItWorks: "DIM Data Bus",
     enter: "Ingresar",

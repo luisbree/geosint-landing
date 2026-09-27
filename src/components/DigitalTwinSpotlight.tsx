@@ -8,7 +8,7 @@ export default function DigitalTwinSpotlight() {
   const { t } = useLanguage();
 
   return (
-    <section id="digital-twin" className="py-20 bg-neutral-bg border-b border-neutral-border/60 relative overflow-hidden">
+    <section id="digital-twin" className="py-20 bg-transparent border-b border-neutral-border/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
