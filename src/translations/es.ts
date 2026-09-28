@@ -309,8 +309,9 @@ export const es = {
     trialItems: [
       "Licencia de siete días sin restricciones de funcionalidad.",
       "Cantidad ILIMITADA de usuarios por empresa.",
-      "Todas las planillas de monitoreo estandarizadas: Agua superficial, Agua Subterránea, Calidad de Aire, Suelos.",
-      "2 Campañas; 3 Estaciones de Monitoreo; 6 Reportes (2 por Estación); 24 Planillas; 60 Fotos"
+      "Catálogo completo de 37 protocolos oficiales de monitoreo (agua, suelo, aire, biota, edafología, bombeo, etc.)",
+      "3 Campañas; 5 Estaciones de Monitoreo; 12 Reportes (4 por Estación); 36 Planillas (6 por Reporte); 100 Fotos",
+      "5 Dictámenes periciales con IA y Acceso pleno al Módulo de Análisis y Gemelo Digital"
     ],
     successTitle: "¡Solicitud Enviada con Éxito!",
     successDesc: "Gracias por interesarte en GeoSint. En breve nos pondremos en contacto con vos.",

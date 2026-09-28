@@ -18,6 +18,7 @@ interface FeatureCell {
   main?: string;
   note?: string;
   details?: string[];
+  hasCheck?: boolean;
 }
 
 interface MasterFeature {
@@ -49,18 +50,18 @@ export default function Pricing() {
       priceMonthly: 50,
       priceLabel: isEs ? "USD 50" : "USD 50",
       period: isEs ? "/ campaña" : "/ campaign",
-      subPeriod: isEs ? "30 días de carga y edición" : "30 days of data entry & edits",
+      subPeriod: isEs ? "60 días de vigencia (ampliable)" : "60 days validity (extendable)",
       isAnnualApplicable: false,
       annualNote: isEs ? "Venta spot / unitaria" : "Spot / per-campaign purchase",
       highlight: false,
       ctaText: isEs ? "Comenzar Campaña" : "Start Campaign",
       keySpecs: [
-        isEs ? "1 Campaña única (30 días)" : "1 Single campaign (30 days)",
+        isEs ? "1 Campaña única (60 días corridos)" : "1 Single campaign (60 calendar days)",
         isEs ? "Usuarios ILIMITADOS en esa campaña" : "UNLIMITED users in that campaign",
         isEs ? "2 GB Storage (tope cerrado)" : "2 GB Storage (fixed limit)",
         isEs ? "5 GB Tráfico mensual incluido" : "5 GB Traffic included",
         isEs ? "5 Dictámenes IA (Gemini 2.0 Flash)" : "5 AI Opinions (Gemini 2.0 Flash)",
-        isEs ? "Subset Esencial (6 planillas)" : "Essential Subset (6 sheets)",
+        isEs ? "6 protocolos a elección libre" : "6 protocols of your choice",
         isEs ? "Sin excedentes (cupo cerrado)" : "No overages (closed quota)"
       ]
     },
@@ -85,14 +86,14 @@ export default function Pricing() {
         : "Monthly recurring billing",
       isAnnualApplicable: true,
       highlight: false,
-      ctaText: isEs ? "Solicitar Trial Starter" : "Request Starter Trial",
+      ctaText: isEs ? "Suscribirse a Starter" : "Subscribe to Starter",
       keySpecs: [
         isEs ? "Proyectos ILIMITADOS" : "UNLIMITED Projects",
         isEs ? "Usuarios ILIMITADOS" : "UNLIMITED Users",
         isEs ? "5 GB Storage incluido" : "5 GB Storage included",
         isEs ? "10 GB Tráfico / mes" : "10 GB Traffic / mo",
         isEs ? "5 Dictámenes IA / mes (Gemini Flash)" : "5 AI Opinions / mo (Gemini Flash)",
-        isEs ? "Subset Esencial (6 planillas)" : "Essential Subset (6 sheets)",
+        isEs ? "37 Protocolos Oficiales Completos" : "37 Complete Official Protocols",
         isEs ? "Régimen de excedentes a mes vencido" : "Overage billing at month end"
       ]
     },
@@ -171,7 +172,9 @@ export default function Pricing() {
       basePrice: isEs ? "USD 50 / campaña" : "USD 50 / campaign",
       annualPrice: isEs ? "No aplica (Venta spot / unitaria)" : "N/A (Spot purchase)",
       userLimit: isEs ? "Ilimitados (en esa campaña)" : "Unlimited (within that campaign)",
-      projectLimit: isEs ? "1 Campaña (hasta 30 días de carga/edición)" : "1 Campaign (up to 30 days of edits)",
+      projectLimit: isEs
+        ? "1 Campaña (60 días de vigencia, ampliable sin costo para espera de laboratorio)"
+        : "1 Campaign (60 days validity, extendable at no cost for lab results)",
       overages: isEs ? "Sin excedentes (cupo cerrado)" : "No overages (closed quota)"
     },
     {
@@ -251,29 +254,26 @@ export default function Pricing() {
       subtitle: isEs ? "(37 protocolos oficiales estructurados)" : "(37 structured official protocols)",
       freelancer: {
         type: "text",
-        main: isEs ? "Subset Esencial (6 planillas)" : "Essential Subset (6 sheets)",
-        details: [
-          isEs ? "Agua Subterránea" : "Groundwater",
-          isEs ? "Agua Superficial" : "Surface Water",
-          isEs ? "Calidad de Suelos" : "Soil Quality",
-          isEs ? "Sedimentos de Fondo" : "Bed Sediments",
-          isEs ? "Aire y Ruido" : "Air & Noise",
-          isEs ? "Contenedor Territorial" : "Territorial Container"
-        ]
+        main: isEs
+          ? "6 protocolos a elección libre según especialidad (geología, biota, calidad de aire, suelos, etc.)"
+          : "6 protocols of your choice by specialty (geology, biota, air quality, soils, etc.)"
       },
       starter: {
         type: "text",
-        main: isEs ? "Subset Esencial (6 planillas)" : "Essential Subset (6 sheets)"
+        main: isEs ? "37 Protocolos Completos" : "37 Complete Protocols",
+        hasCheck: true
       },
       pro: {
         type: "text",
         main: isEs ? "37 Protocolos Completos" : "37 Complete Protocols",
-        note: isEs ? "(Ensayos de bombeo, Lugeon, Edafología, Biota, eDNA, Radón, Residuos)" : "(Pumping tests, Lugeon, Soil profiles, Biota, eDNA, Radon, Waste)"
+        note: isEs ? "(Ensayos de bombeo, Lugeon, Edafología, Biota, eDNA, Radón, Residuos)" : "(Pumping tests, Lugeon, Soil profiles, Biota, eDNA, Radon, Waste)",
+        hasCheck: true
       },
       enterprise: {
         type: "text",
         main: isEs ? "37 Protocolos Completos" : "37 Complete Protocols",
-        note: isEs ? "(+ Posibilidad de configurar planillas custom)" : "(+ Ability to configure custom checklists)"
+        note: isEs ? "(+ Posibilidad de configurar planillas custom)" : "(+ Ability to configure custom checklists)",
+        hasCheck: true
       }
     },
     {
@@ -973,8 +973,8 @@ export default function Pricing() {
             </h4>
             <p className="text-sm text-neutral-200 max-w-2xl font-light">
               {isEs
-                ? "Solicitá tu Free Trial de 7 días con usuarios ilimitados y protocolos estándar habilitados. Sin requerir tarjeta de crédito."
-                : "Request your 7-day Free Trial with unlimited users and standard protocols enabled. No credit card required."}
+                ? "Solicitá tu Free Trial de 7 días con prestaciones completas equivalentes a Plan PRO (37 protocolos, Gemelo Digital y Módulo de Análisis). Sin requerir tarjeta de crédito."
+                : "Request your 7-day Free Trial with full features equivalent to PRO Plan (37 protocols, Digital Twin, and Analysis Module). No credit card required."}
             </p>
           </div>
 
@@ -1016,9 +1016,18 @@ function renderCell(cell: FeatureCell, isPro = false) {
   if (cell.type === "text") {
     return (
       <div className="text-center space-y-1">
-        <span className={`block font-semibold text-xs leading-snug ${isPro ? "text-primary font-bold" : "text-neutral-800"}`}>
-          {cell.main}
-        </span>
+        {cell.hasCheck ? (
+          <div className="flex items-center justify-center space-x-1.5 text-emerald-700">
+            <Check className="h-4 w-4 stroke-[3] text-emerald-600 shrink-0" />
+            <span className={`block font-semibold text-xs leading-snug ${isPro ? "text-primary font-bold" : "text-neutral-900"}`}>
+              {cell.main}
+            </span>
+          </div>
+        ) : (
+          <span className={`block font-semibold text-xs leading-snug ${isPro ? "text-primary font-bold" : "text-neutral-800"}`}>
+            {cell.main}
+          </span>
+        )}
         {cell.note && (
           <span className="block text-[11px] text-neutral-500 leading-tight font-normal">
             {cell.note}

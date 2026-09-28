@@ -309,8 +309,9 @@ export const en = {
     trialItems: [
       "Seven-day license with zero functional restrictions.",
       "UNLIMITED users per company.",
-      "All standardized monitoring sheets: Surface water, Groundwater, Air quality, Soils.",
-      "2 Campaigns; 3 Monitoring Stations; 6 Reports (2 per Station); 24 Sheets; 60 Photos"
+      "Full catalog of 37 official monitoring protocols (water, soil, air, biota, pedology, pumping tests, etc.)",
+      "3 Campaigns; 5 Monitoring Stations; 12 Reports (4 per Station); 36 Sheets (6 per Report); 100 Photos",
+      "5 Forensic AI Opinions and Full access to Analysis Module & Digital Twin"
     ],
     successTitle: "Request Submitted Successfully!",
     successDesc: "Thank you for your interest in GeoSint. We will contact you shortly.",
