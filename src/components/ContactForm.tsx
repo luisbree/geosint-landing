@@ -95,6 +95,9 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="py-24 bg-transparent relative overflow-hidden">
+      {/* Anchor alias so #contacto also scrolls here */}
+      <div id="contacto" className="absolute -top-24 pointer-events-none" />
+
       {/* Background radial gradients */}
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-primary/5 rounded-full filter blur-3xl pointer-events-none" />
 

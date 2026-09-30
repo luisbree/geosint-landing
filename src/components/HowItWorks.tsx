@@ -15,7 +15,7 @@ interface Pillar {
 }
 
 export default function HowItWorks() {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://ddb.geosint.com.ar";
+  const appUrl = process.env.NEXT_PUBLIC_DDB_URL || process.env.NEXT_PUBLIC_APP_URL || "https://ddb.geosint.com.ar";
   const { t } = useLanguage();
 
   // Helper to parse formatting placeholder e.g. {activity_logs} into styled HTML code tag

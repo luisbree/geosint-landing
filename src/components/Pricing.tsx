@@ -35,6 +35,8 @@ export default function Pricing() {
   const [annualBilling, setAnnualBilling] = useState(false);
   const [activeTab, setActiveTab] = useState<TableTab>("all");
 
+  const ddbUrl = process.env.NEXT_PUBLIC_DDB_URL || process.env.NEXT_PUBLIC_APP_URL || "https://ddb.geosint.com.ar";
+
   const isEs = language !== "en";
 
   // 4 Tiers definition
@@ -54,7 +56,7 @@ export default function Pricing() {
       isAnnualApplicable: false,
       annualNote: isEs ? "Venta spot / unitaria" : "Spot / per-campaign purchase",
       highlight: false,
-      ctaText: isEs ? "Comenzar Campaña" : "Start Campaign",
+      ctaText: isEs ? "Contratar Campaña (USD 50)" : "Contract Campaign (USD 50)",
       keySpecs: [
         isEs ? "1 Campaña única (60 días corridos)" : "1 Single campaign (60 calendar days)",
         isEs ? "Usuarios ILIMITADOS en esa campaña" : "UNLIMITED users in that campaign",
@@ -86,7 +88,7 @@ export default function Pricing() {
         : "Monthly recurring billing",
       isAnnualApplicable: true,
       highlight: false,
-      ctaText: isEs ? "Suscribirse a Starter" : "Subscribe to Starter",
+      ctaText: isEs ? "Suscribirme a Starter" : "Subscribe to Starter",
       keySpecs: [
         isEs ? "Proyectos ILIMITADOS" : "UNLIMITED Projects",
         isEs ? "Usuarios ILIMITADOS" : "UNLIMITED Users",
@@ -118,7 +120,7 @@ export default function Pricing() {
         : "Monthly recurring billing",
       isAnnualApplicable: true,
       highlight: true,
-      ctaText: isEs ? "Solicitar Trial Pro" : "Request Pro Trial",
+      ctaText: isEs ? "Elegir Plan Pro" : "Choose Pro Plan",
       keySpecs: [
         isEs ? "Proyectos y Usuarios ILIMITADOS" : "UNLIMITED Projects & Users",
         isEs ? "37 Protocolos Completos de monitoreo" : "All 37 Full monitoring protocols",
@@ -151,7 +153,7 @@ export default function Pricing() {
         : "Monthly plan or annual contract",
       isAnnualApplicable: true,
       highlight: false,
-      ctaText: isEs ? "Contactar a Ventas" : "Contact Sales",
+      ctaText: isEs ? "Contactar Ventas Enterprise" : "Contact Enterprise Sales",
       keySpecs: [
         isEs ? "37 Protocolos + Planillas Custom" : "37 Protocols + Custom Checklists",
         isEs ? "Grafo 3D (Heatmap + Aislamiento)" : "3D Graph (Heatmap + Route isolation)",
@@ -598,10 +600,21 @@ export default function Pricing() {
                   </ul>
                 </div>
 
-                {/* Card CTA */}
-                <div className="mt-7 pt-2">
+                {/* Card CTAs: Direct Checkout + Free Trial */}
+                <div className="mt-7 pt-2 space-y-2.5">
+                  {/* B. Botón Principal: Contratar / Suscribirse (Checkout Directo) */}
                   <a
-                    href="#contact"
+                    href={
+                      tier.id === "freelancer"
+                        ? `${ddbUrl}/suscripcion?plan=freelancer`
+                        : tier.id === "starter"
+                        ? `${ddbUrl}/suscripcion?plan=starter&cycle=${annualBilling ? "annual" : "monthly"}`
+                        : tier.id === "pro"
+                        ? `${ddbUrl}/suscripcion?plan=pro&cycle=${annualBilling ? "annual" : "monthly"}`
+                        : `${ddbUrl}/suscripcion?plan=enterprise`
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`w-full py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 transition-all duration-200 cursor-pointer ${
                       isHighlighted
                         ? "bg-accent hover:bg-accent-hover text-marine-dark shadow-md hover:shadow-lg hover:shadow-accent/20"
@@ -611,6 +624,32 @@ export default function Pricing() {
                     <span>{tier.ctaText}</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </a>
+
+                  {/* A. Botón Secundario: Probar 7 Días Gratis (Trial Pro) */}
+                  <a
+                    href="#contact"
+                    className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center space-x-2 transition-all duration-200 cursor-pointer border ${
+                      isHighlighted
+                        ? "border-accent/60 text-accent hover:bg-accent/15 hover:border-accent"
+                        : "border-primary/25 text-primary hover:bg-primary-soft/50 hover:border-primary/50"
+                    }`}
+                  >
+                    <Sparkles className="h-3.5 w-3.5" />
+                    <span>{isEs ? "Probar 7 Días Gratis" : "Try 7 Days Free"}</span>
+                  </a>
+
+                  {/* Nota comercial */}
+                  <p
+                    className={`text-[10px] leading-tight text-center pt-0.5 ${
+                      isHighlighted ? "text-slate-300/80" : "text-neutral-500"
+                    }`}
+                  >
+                    <span>
+                      {isEs
+                        ? "Sin tarjeta de crédito · Incluye 37 protocolos y Gemelo Digital 3D"
+                        : "No credit card required · 37 protocols & 3D Twin included"}
+                    </span>
+                  </p>
                 </div>
               </div>
             );
@@ -982,7 +1021,7 @@ export default function Pricing() {
             href="#contact"
             className="shrink-0 bg-accent hover:bg-accent-hover text-marine-dark px-6 py-3.5 rounded-xl font-bold text-sm tracking-wide transition-all duration-200 shadow-md hover:shadow-xl hover:shadow-accent/20 flex items-center space-x-2 cursor-pointer"
           >
-            <span>{isEs ? "Solicitar Trial de 7 Días" : "Request 7-Day Trial"}</span>
+            <span>{isEs ? "Probar 7 Días Gratis" : "Try 7 Days Free"}</span>
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>

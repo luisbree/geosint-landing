@@ -10,7 +10,7 @@ export default function Navbar() {
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://ddb.geosint.com.ar";
+  const appUrl = process.env.NEXT_PUBLIC_DDB_URL || process.env.NEXT_PUBLIC_APP_URL || "https://ddb.geosint.com.ar";
 
   useEffect(() => {
     const handleScroll = () => {
