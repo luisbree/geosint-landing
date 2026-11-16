@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import PlatformModules from "@/components/PlatformModules";
+import MatricesCarousel from "@/components/MatricesCarousel";
 import RuleEngineShowcase from "@/components/RuleEngineShowcase";
 import DigitalTwinSpotlight from "@/components/DigitalTwinSpotlight";
 import AnalystAgentSpotlight from "@/components/AnalystAgentSpotlight";
@@ -28,6 +29,9 @@ export default function Home() {
 
         {/* Section 3: Módulos de la Plataforma DIM Data Bus */}
         <PlatformModules />
+
+        {/* Section 3.5: Carrusel 3D de las 5 Matrices Ambientales */}
+        <MatricesCarousel />
 
         {/* Section 4: Motor de Reglas y Concomitancias en acción (Modal Captura 1) */}
         <RuleEngineShowcase />
